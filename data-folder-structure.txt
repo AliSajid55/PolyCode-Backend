@@ -1,0 +1,2617 @@
+data/
+├── Batchfile/
+│   ├── data/
+│   │   ├── 1-Getting Started/
+│   │   │   ├── Batch Commands Reference.md
+│   │   │   ├── Control Flow.md
+│   │   │   ├── Getting Started.md
+│   │   │   ├── Installation and Setup.md
+│   │   │   ├── Looping with FOR.md
+│   │   │   ├── Making Decisions.md
+│   │   │   ├── Quick Reference.md
+│   │   │   ├── README.md
+│   │   │   ├── Syntax and Structure.md
+│   │   │   ├── Understanding Variables.md
+│   │   │   ├── Variables.md
+│   │   │   ├── What is Batch.md
+│   │   │   ├── Why Use Batch Files.md
+│   │   │   ├── Working with Text.md
+│   │   │   └── Your First Batch File.md
+│   │   ├── 10-Real World Applications/
+│   │   │   ├── daily project backup.bat
+│   │   │   ├── database_backup.bat
+│   │   │   ├── menu driven tool.bat
+│   │   │   ├── README.md
+│   │   │   ├── Real World Projects.md
+│   │   │   └── system health report.bat
+│   │   ├── 11-Performance and Optimization/
+│   │   │   ├── disk cleanup helper.bat
+│   │   │   ├── memory_optimizer.bat
+│   │   │   ├── README.md
+│   │   │   └── recursive cleaner.bat
+│   │   ├── 12-Security and Error Handling/
+│   │   │   ├── Complete Error Handling Guide.md
+│   │   │   ├── Error Handling Patterns.md
+│   │   │   ├── Error Handling Techniques.md
+│   │   │   ├── Error Handling.md
+│   │   │   ├── input_validator.bat
+│   │   │   └── README.md
+│   │   ├── 13-Integration and Automation/
+│   │   │   ├── api_client.bat
+│   │   │   ├── config driven runner.bat
+│   │   │   ├── csv reader.bat
+│   │   │   ├── json like parser.bat
+│   │   │   └── README.md
+│   │   ├── 2-Core Concepts/
+│   │   │   ├── Complete Functions Guide.md
+│   │   │   ├── Data Operations Guide.md
+│   │   │   ├── Functions and Modularity.md
+│   │   │   ├── Functions and Subroutines.md
+│   │   │   ├── Functions Library.md
+│   │   │   ├── Input Output Mastery.md
+│   │   │   ├── Input Output.md
+│   │   │   ├── Number Operations Masterclass.md
+│   │   │   ├── README.md
+│   │   │   ├── String and Number Operations.md
+│   │   │   ├── String Number Operations.md
+│   │   │   ├── String Operations Deep Dive.md
+│   │   │   └── Working with Arrays.md
+│   │   ├── 3-Advanced Techniques/
+│   │   │   ├── Advanced Scripting Techniques.md
+│   │   │   ├── Advanced Techniques.md
+│   │   │   ├── Advanced Topics.md
+│   │   │   ├── Backup Recovery.md
+│   │   │   ├── Debugging Master Guide.md
+│   │   │   ├── Debugging Troubleshooting.md
+│   │   │   ├── File and Directory Operations.md
+│   │   │   ├── File Directory Operations.md
+│   │   │   ├── File Operations Guide.md
+│   │   │   ├── README.md
+│   │   │   ├── Registry Operations.md
+│   │   │   └── Troubleshooting Common Errors.md
+│   │   ├── 4-Practical Examples/
+│   │   │   ├── More Practical Examples.md
+│   │   │   ├── Practical Examples.md
+│   │   │   ├── README.md
+│   │   │   └── Text Processing Examples.md
+│   │   ├── 5-Reference Materials/
+│   │   │   ├── Appendix Quick Reference Tables.md
+│   │   │   ├── Appendix README.md
+│   │   │   ├── Batch Syntax Examples.md
+│   │   │   ├── Best Practices.md
+│   │   │   ├── Cheat Sheet.md
+│   │   │   ├── Command Cheat Sheet.md
+│   │   │   ├── Command Line Arguments.md
+│   │   │   ├── Command Usage Examples.md
+│   │   │   ├── Commands Deep Dive.md
+│   │   │   ├── Commands Reference.md
+│   │   │   ├── Common Patterns.md
+│   │   │   ├── Complete Command Reference.md
+│   │   │   ├── Environment Variables Examples.md
+│   │   │   ├── Environment Variables Guide.md
+│   │   │   ├── Environment Variables Reference.md
+│   │   │   ├── Quick Command Examples.md
+│   │   │   ├── Quick Reference Tables.md
+│   │   │   ├── Quick Reference.md
+│   │   │   ├── README.md
+│   │   │   ├── Script Templates.md
+│   │   │   ├── Special Variables Examples.md
+│   │   │   ├── Special Variables Reference.md
+│   │   │   ├── Tips and Tricks.md
+│   │   │   ├── Using Special Variables copy.md
+│   │   │   └── Using Special Variables.md
+│   │   ├── 6-Learning Resources/
+│   │   │   ├── Getting Started Guide.md
+│   │   │   ├── INDEX.md
+│   │   │   ├── Learning Roadmap.md
+│   │   │   ├── Overview.md
+│   │   │   ├── QUICKSTART.md
+│   │   │   ├── Tips and Tricks.md
+│   │   │   └── Video Tutorials Guide.md
+│   │   ├── 7-Utilities and Tools/
+│   │   │   ├── argument parser.bat
+│   │   │   ├── bulk rename by extension.bat
+│   │   │   ├── Control Flow Examples.bat
+│   │   │   ├── error handling pattern.bat
+│   │   │   ├── File and Directory Examples.bat
+│   │   │   ├── file backup copy.bat
+│   │   │   ├── file exists check.bat
+│   │   │   ├── file_compressor.bat
+│   │   │   ├── for loop counter.bat
+│   │   │   ├── hello world.bat
+│   │   │   ├── logging helper.bat
+│   │   │   ├── network ping monitor.bat
+│   │   │   ├── retry command.bat
+│   │   │   ├── simple calculator.bat
+│   │   │   ├── user input and greeting.bat
+│   │   │   └── Variables and Strings Examples.bat
+│   │   ├── 8-Troubleshooting and FAQ/
+│   │   │   ├── Common Issues.md
+│   │   │   ├── FAQ.md
+│   │   │   └── Troubleshooting.md
+│   │   └── 9-Best Practices/
+│   │       ├── Best Practices.md
+│   │       ├── Code Style Guide.md
+│   │       ├── README.md
+│   │       ├── Security Best Practices Guide.md
+│   │       └── Security Best Practices.md
+│   └── README.md
+├── C/
+│   ├── .vscode/
+│   │   ├── c_cpp_properties.json
+│   │   ├── launch.json
+│   │   ├── settings.json
+│   │   └── tasks.json
+│   ├── data/
+│   │   ├── Advanced/
+│   │   │   ├── arrays.md
+│   │   │   ├── File io.md
+│   │   │   ├── memory management.md
+│   │   │   ├── memory-management.md
+│   │   │   ├── multithreading.md
+│   │   │   ├── network-programming.md
+│   │   │   ├── preprocessor.md
+│   │   │   ├── strings.md
+│   │   │   └── structs.md
+│   │   ├── advanced_security/
+│   │   │   ├── Advanced_Security.c
+│   │   │   └── Advanced_Security.md
+│   │   ├── advanced_topics/
+│   │   │   ├── basics drills.c
+│   │   │   ├── bitwise playground.c
+│   │   │   ├── command line calculator.c
+│   │   │   ├── control flow drills.c
+│   │   │   ├── dynamic memory.c
+│   │   │   ├── factorial recursion.c
+│   │   │   ├── fibonacci memoization.c
+│   │   │   ├── macros and function pointers legacy.c
+│   │   │   ├── pointers basics.c
+│   │   │   ├── pointers drills.c
+│   │   │   └── README.md
+│   │   ├── algorithms/
+│   │   │   ├── binary_search.c
+│   │   │   ├── bubble_sort.c
+│   │   │   ├── Dynamic_Programming.c
+│   │   │   ├── Dynamic_Programming.md
+│   │   │   ├── Graph_Algorithms.c
+│   │   │   ├── Graph_Algorithms.md
+│   │   │   ├── graph_bfs.c
+│   │   │   ├── graph_dfs.c
+│   │   │   ├── heap_sort.c
+│   │   │   ├── insertion_sort.c
+│   │   │   ├── linear_search.c
+│   │   │   ├── merge_sort.c
+│   │   │   ├── quick_sort.c
+│   │   │   ├── README.md
+│   │   │   ├── Searching_Algorithms.c
+│   │   │   ├── Searching_Algorithms.md
+│   │   │   ├── selection_sort.c
+│   │   │   ├── Sorting_Algorithms.c
+│   │   │   └── Sorting_Algorithms.md
+│   │   ├── api_design_implementation/
+│   │   │   ├── API_Design_and_Implementation.c
+│   │   │   └── API_Design_and_Implementation.md
+│   │   ├── artificial_intelligence/
+│   │   │   ├── Artificial_Intelligence.c
+│   │   │   └── Artificial_Intelligence.md
+│   │   ├── Basics/
+│   │   │   ├── arrays.md
+│   │   │   ├── control-flow.md
+│   │   │   ├── datatypes.md
+│   │   │   ├── functions.md
+│   │   │   ├── introduction.md
+│   │   │   ├── loops.md
+│   │   │   ├── operations.md
+│   │   │   └── operators.md
+│   │   ├── best_practices/
+│   │   │   ├── coding_standards.c
+│   │   │   ├── documentation.c
+│   │   │   ├── error_handling.c
+│   │   │   ├── memory_management.c
+│   │   │   └── modular_design.c
+│   │   ├── blockchain_development/
+│   │   │   ├── Blockchain_Development.c
+│   │   │   └── Blockchain_Development.md
+│   │   ├── cloud_computing/
+│   │   │   ├── Cloud_Computing.c
+│   │   │   └── Cloud_Computing.md
+│   │   ├── compiler_design_advanced/
+│   │   │   ├── Compiler_Design_Advanced.c
+│   │   │   └── Compiler_Design_Advanced.md
+│   │   ├── compiler_interpreter/
+│   │   │   ├── Compiler_and_Interpreter.c
+│   │   │   └── Compiler_and_Interpreter.md
+│   │   ├── computer_graphics_advanced/
+│   │   │   ├── Computer_Graphics_Advanced.c
+│   │   │   └── Computer_Graphics_Advanced.md
+│   │   ├── core_concepts/
+│   │   │   ├── 01 io statements.c
+│   │   │   ├── 01 IO Statements.md
+│   │   │   ├── 02 conditional statements.c
+│   │   │   ├── 02 Conditional Statements.md
+│   │   │   ├── 03 repetitive statements.c
+│   │   │   ├── 03 Repetitive Statements.md
+│   │   │   ├── 04 functions.c
+│   │   │   ├── 04 Functions.md
+│   │   │   ├── arrays intro.c
+│   │   │   ├── binary records.c
+│   │   │   ├── csv parser.c
+│   │   │   ├── error log parser.c
+│   │   │   ├── functions intro.c
+│   │   │   ├── hello variables.c
+│   │   │   ├── input output.c
+│   │   │   ├── README.md
+│   │   │   ├── scanf format specifiers.c
+│   │   │   ├── scanf format specifiers.md
+│   │   │   └── strings intro.c
+│   │   ├── cross_platform_development/
+│   │   │   ├── Cross_Platform_Development.c
+│   │   │   └── Cross_Platform_Development.md
+│   │   ├── cryptography_security/
+│   │   │   ├── Cryptography_and_Security.c
+│   │   │   └── Cryptography_and_Security.md
+│   │   ├── data_serialization/
+│   │   │   ├── Data_Serialization.c
+│   │   │   └── Data_Serialization.md
+│   │   ├── data_structures/
+│   │   │   ├── Advanced_Data_Structures.c
+│   │   │   ├── Advanced_Data_Structures.md
+│   │   │   ├── Linked_Lists.c
+│   │   │   ├── Linked_Lists.md
+│   │   │   ├── Stack_Queue_Arrays.c
+│   │   │   ├── Stacks_and_Queues.c
+│   │   │   ├── Stacks_and_Queues.md
+│   │   │   ├── Trees_and_Graphs.c
+│   │   │   └── Trees_and_Graphs.md
+│   │   ├── database/
+│   │   │   ├── mysql_connection.c
+│   │   │   ├── postgresql_connection.c
+│   │   │   ├── sqlite_basic.c
+│   │   │   └── sqlite_prepared.c
+│   │   ├── database_programming/
+│   │   │   ├── SQLite_Database_Operations.c
+│   │   │   └── SQLite_Database_Operations.md
+│   │   ├── database_programming_advanced/
+│   │   │   ├── Database_Programming_Advanced.c
+│   │   │   └── Database_Programming_Advanced.md
+│   │   ├── debugging/
+│   │   │   ├── assertions.c
+│   │   │   ├── debug_macros.h
+│   │   │   ├── logging.c
+│   │   │   ├── memory_debug.c
+│   │   │   ├── performance_profiler.c
+│   │   │   ├── README.md
+│   │   │   └── unit_testing.c
+│   │   ├── distributed_systems/
+│   │   │   ├── Distributed_Systems.c
+│   │   │   └── Distributed_Systems.md
+│   │   ├── embedded_systems/
+│   │   │   ├── Microcontroller_Programming.c
+│   │   │   └── Microcontroller_Programming.md
+│   │   ├── embedded_systems_advanced/
+│   │   │   ├── Embedded_Systems_Advanced.c
+│   │   │   └── Embedded_Systems_Advanced.md
+│   │   ├── examples/
+│   │   │   ├── File_IO_Operations.c
+│   │   │   ├── File_IO_Operations.md
+│   │   │   ├── Pointer_Basics.c
+│   │   │   ├── Pointer_Basics.md
+│   │   │   ├── String_Operations.c
+│   │   │   ├── String_Operations.md
+│   │   │   ├── Structures_and_Unions.c
+│   │   │   └── Structures_and_Unions.md
+│   │   ├── exercises/
+│   │   │   ├── array_exercises.c
+│   │   │   ├── Array_Manipulation.c
+│   │   │   ├── Array_Manipulation.md
+│   │   │   ├── Basic_Programming_Exercises.c
+│   │   │   ├── Basic_Programming_Exercises.md
+│   │   │   ├── Bit_Manipulation.c
+│   │   │   ├── Bit_Manipulation.md
+│   │   │   ├── data_structure_problems.c
+│   │   │   ├── practice_problems.c
+│   │   │   ├── Recursion_Exercises.c
+│   │   │   ├── Recursion_Exercises.md
+│   │   │   ├── recursion_problems.c
+│   │   │   └── string_exercises.c
+│   │   ├── explainC/
+│   │   │   ├── 01_memory_management.md
+│   │   │   ├── 02_pointers_and_arrays.md
+│   │   │   ├── 03_c_preprocessor_and_macros.md
+│   │   │   ├── 04_data_structures_in_c.md
+│   │   │   └── 05_concurrency_and_system_programming.md
+│   │   ├── file_operations/
+│   │   │   ├── binary_file_ops.c
+│   │   │   ├── csv_parser.c
+│   │   │   ├── directory_ops.c
+│   │   │   ├── file_attributes.c
+│   │   │   ├── file_copy.c
+│   │   │   ├── file_reader.c
+│   │   │   └── README.md
+│   │   ├── file_system_operations/
+│   │   │   ├── File_System_Operations.c
+│   │   │   └── File_System_Operations.md
+│   │   ├── Functions/
+│   │   │   ├── definingfunctions.md
+│   │   │   ├── parameters.md
+│   │   │   ├── Pointers.md
+│   │   │   ├── Recursion.md
+│   │   │   └── ReturnValues.md
+│   │   ├── game_development/
+│   │   │   ├── Game_Programming_Fundamentals.c
+│   │   │   └── Game_Programming_Fundamentals.md
+│   │   ├── game_development_advanced/
+│   │   │   ├── Game_Development_Advanced.c
+│   │   │   └── Game_Development_Advanced.md
+│   │   ├── Gaming hub/
+│   │   │   ├── hangman.c
+│   │   │   ├── Main Menu.c
+│   │   │   ├── maze.c
+│   │   │   ├── minesweeper.c
+│   │   │   ├── mountain_ascend.c
+│   │   │   ├── num_guesser.c
+│   │   │   ├── ping_pong.c
+│   │   │   ├── Project Proposal.pdf
+│   │   │   ├── Project Report.pdf
+│   │   │   ├── rock_paper.c
+│   │   │   ├── snake.c
+│   │   │   ├── temp
+│   │   │   ├── tic_tac_toe.c
+│   │   │   └── words.txt
+│   │   ├── graphics/
+│   │   │   ├── ascii_art.c
+│   │   │   ├── mandelbrot.c
+│   │   │   ├── ray_tracing.c
+│   │   │   └── turtle_graphics.c
+│   │   ├── graphics_gui/
+│   │   │   ├── Graphics_and_GUI_Programming.c
+│   │   │   └── Graphics_and_GUI_Programming.md
+│   │   ├── intermediate/
+│   │   │   ├── file-io.md
+│   │   │   ├── pointers.md
+│   │   │   ├── strings.md
+│   │   │   └── structures.md
+│   │   ├── iot_development/
+│   │   │   ├── IoT_Development.c
+│   │   │   └── IoT_Development.md
+│   │   ├── logging_monitoring/
+│   │   │   ├── Logging_and_Monitoring.c
+│   │   │   └── Logging_and_Monitoring.md
+│   │   ├── machine_learning/
+│   │   │   ├── Machine_Learning_Algorithms.c
+│   │   │   └── Machine_Learning_Algorithms.md
+│   │   ├── machine_learning_advanced/
+│   │   │   ├── Machine_Learning_Advanced.c
+│   │   │   └── Machine_Learning_Advanced.md
+│   │   ├── memory_management_debugging/
+│   │   │   ├── Memory_Management_and_Debugging.c
+│   │   │   └── Memory_Management_and_Debugging.md
+│   │   ├── mobile_development/
+│   │   │   ├── Mobile_Development.c
+│   │   │   └── Mobile_Development.md
+│   │   ├── multithreading/
+│   │   │   ├── basic_threads.c
+│   │   │   ├── condition_variables.c
+│   │   │   ├── mutex_examples.c
+│   │   │   ├── Thread_Management.c
+│   │   │   ├── Thread_Management.md
+│   │   │   └── thread_pool.c
+│   │   ├── multithreading_concurrency/
+│   │   │   ├── Multithreading_and_Concurrency.c
+│   │   │   └── Multithreading_and_Concurrency.md
+│   │   ├── network_programming/
+│   │   │   ├── ftp_client.c
+│   │   │   ├── http_server.c
+│   │   │   ├── ping_utility.c
+│   │   │   ├── Socket_Programming.c
+│   │   │   ├── Socket_Programming.md
+│   │   │   ├── tcp_client.c
+│   │   │   ├── tcp_server.c
+│   │   │   ├── udp_server.c
+│   │   │   └── websocket_server.c
+│   │   ├── network_programming_advanced/
+│   │   │   ├── Network_Programming_Advanced.c
+│   │   │   └── Network_Programming_Advanced.md
+│   │   ├── performance_optimization/
+│   │   │   ├── Performance_Optimization.c
+│   │   │   └── Performance_Optimization.md
+│   │   ├── plugin_architecture/
+│   │   │   ├── Plugin_Architecture.c
+│   │   │   └── Plugin_Architecture.md
+│   │   ├── projects/
+│   │   │   ├── Calculator.c
+│   │   │   ├── Calculator.md
+│   │   │   ├── Expense_Tracker.c
+│   │   │   ├── Expense_Tracker.md
+│   │   │   ├── Student_Gradebook.c
+│   │   │   └── Student_Gradebook.md
+│   │   ├── real_time_programming/
+│   │   │   ├── Real_Time_Programming.c
+│   │   │   └── Real_Time_Programming.md
+│   │   ├── scientific_computing/
+│   │   │   ├── Numerical_Methods.c
+│   │   │   └── Numerical_Methods.md
+│   │   ├── scientific_computing_advanced/
+│   │   │   ├── Scientific_Computing_Advanced.c
+│   │   │   └── Scientific_Computing_Advanced.md
+│   │   ├── security/
+│   │   │   ├── aes_encryption.c
+│   │   │   ├── caesar_cipher.c
+│   │   │   ├── hash_functions.c
+│   │   │   └── rsa_encryption.c
+│   │   ├── system_programming/
+│   │   │   ├── file_system.c
+│   │   │   ├── process_info.c
+│   │   │   ├── shared_memory.c
+│   │   │   ├── signal_handling.c
+│   │   │   ├── System_Calls_and_Processes.c
+│   │   │   └── System_Calls_and_Processes.md
+│   │   ├── testing/
+│   │   │   ├── Memory_Testing_Tools.c
+│   │   │   ├── Memory_Testing_Tools.md
+│   │   │   ├── Performance_Benchmarks.c
+│   │   │   ├── Performance_Benchmarks.md
+│   │   │   ├── Simple_Test_Framework.c
+│   │   │   └── Simple_Test_Framework.md
+│   │   ├── utilities/
+│   │   │   ├── Advanced_String_Utilities.c
+│   │   │   ├── Advanced_String_Utilities.md
+│   │   │   ├── Common_Utility_Functions.c
+│   │   │   ├── Common_Utility_Functions.md
+│   │   │   ├── Data_Validation.c
+│   │   │   ├── Data_Validation.md
+│   │   │   ├── date_utils.c
+│   │   │   ├── helper_functions.c
+│   │   │   ├── math_utils.c
+│   │   │   ├── string_utils.c
+│   │   │   └── validation_utils.c
+│   │   ├── web_api_programming/
+│   │   │   ├── Web_Server_and_API.c
+│   │   │   └── Web_Server_and_API.md
+│   │   ├── web_development_advanced/
+│   │   │   ├── Web_Development_Advanced.c
+│   │   │   └── Web_Development_Advanced.md
+│   │   ├── web_server_development/
+│   │   │   ├── Web_Server_Development.c
+│   │   │   └── Web_Server_Development.md
+│   │   └── README.md
+│   ├── Quantum/
+│   ├── .gitignore
+│   ├── .gitmodules
+│   └── README.md
+├── C#/
+│   ├── data/
+│   │   ├── advanced/
+│   │   │   ├── 01-delegates.md
+│   │   │   ├── 02-events.md
+│   │   │   ├── 03-linq.md
+│   │   │   ├── 04-async-await.md
+│   │   │   ├── 05-generics.md
+│   │   │   ├── AsyncAwaitDemo.cs
+│   │   │   ├── DelegatesDemo.cs
+│   │   │   ├── EventsDemo.cs
+│   │   │   ├── GenericsDemo.cs
+│   │   │   └── LINQDemo.cs
+│   │   ├── algorithms/
+│   │   │   ├── data-structures.cs
+│   │   │   ├── dynamic-programming.cs
+│   │   │   ├── recursion-patterns.cs
+│   │   │   ├── searching-algorithms.cs
+│   │   │   └── sorting-algorithms.cs
+│   │   ├── async/
+│   │   │   ├── async-await-basics.cs
+│   │   │   ├── async-best-practices.cs
+│   │   │   ├── async-streams.cs
+│   │   │   ├── cancellation.cs
+│   │   │   └── multiple-tasks.cs
+│   │   ├── basics/
+│   │   │   ├── 01-variables.md
+│   │   │   ├── 02-methods.md
+│   │   │   ├── 03-conditionals.md
+│   │   │   ├── 04-loops.md
+│   │   │   ├── 05-arrays.md
+│   │   │   ├── ArraysDemo.cs
+│   │   │   ├── ConditionalsDemo.cs
+│   │   │   ├── LoopsDemo.cs
+│   │   │   ├── MethodsDemo.cs
+│   │   │   └── VariablesDemo.cs
+│   │   ├── console/
+│   │   │   ├── BankAccount.cs
+│   │   │   ├── HelloWorld.cs
+│   │   │   ├── LinqDemo.cs
+│   │   │   └── VariablesDemo.cs
+│   │   ├── dependency-injection/
+│   │   │   ├── advanced-patterns.cs
+│   │   │   ├── basic-di.cs
+│   │   │   ├── best-practices.cs
+│   │   │   ├── factory-pattern.cs
+│   │   │   └── service-lifetimes.cs
+│   │   ├── docs/
+│   │   │   ├── 01-introduction.md
+│   │   │   ├── 02-setup.md
+│   │   │   ├── 03-first-program.md
+│   │   │   ├── 04-variables-data-types.md
+│   │   │   ├── 08-classes-objects.md
+│   │   │   └── 16-linq.md
+│   │   ├── entity-framework/
+│   │   │   ├── advanced-queries.cs
+│   │   │   ├── crud-operations.cs
+│   │   │   ├── db-context.cs
+│   │   │   ├── migrations.cs
+│   │   │   └── performance-optimization.cs
+│   │   ├── error-handling/
+│   │   │   ├── async-error-handling.cs
+│   │   │   ├── basic-exceptions.cs
+│   │   │   ├── custom-exceptions.cs
+│   │   │   ├── logging-patterns.cs
+│   │   │   └── resilience-patterns.cs
+│   │   ├── exercises/
+│   │   │   ├── Exercise01_Basics.cs
+│   │   │   ├── Exercise02_Variables.cs
+│   │   │   └── Exercise03_Classes.cs
+│   │   ├── intermediate/
+│   │   │   ├── 01-oop-basics.md
+│   │   │   ├── 02-inheritance.md
+│   │   │   ├── 03-interfaces.md
+│   │   │   ├── 04-exceptions.md
+│   │   │   ├── 05-collections.md
+│   │   │   ├── CollectionsDemo.cs
+│   │   │   ├── ExceptionsDemo.cs
+│   │   │   ├── InheritanceDemo.cs
+│   │   │   ├── InterfacesDemo.cs
+│   │   │   └── OOPBasicsDemo.cs
+│   │   ├── linq/
+│   │   │   ├── aggregation.cs
+│   │   │   ├── basic-queries.cs
+│   │   │   ├── complex-queries.cs
+│   │   │   ├── deferred-execution.cs
+│   │   │   └── joins.cs
+│   │   ├── multithreading/
+│   │   │   ├── concurrent-collections.cs
+│   │   │   ├── parallel-linq.cs
+│   │   │   ├── synchronization-primitives.cs
+│   │   │   ├── task-parallel-library.cs
+│   │   │   └── thread-basics.cs
+│   │   ├── patterns/
+│   │   │   ├── decorator.cs
+│   │   │   ├── factory.cs
+│   │   │   ├── observer.cs
+│   │   │   ├── singleton.cs
+│   │   │   └── strategy.cs
+│   │   ├── performance/
+│   │   │   ├── benchmarking.cs
+│   │   │   ├── memory-management.cs
+│   │   │   ├── optimization-strategies.cs
+│   │   │   └── profiling-techniques.cs
+│   │   ├── resources/
+│   │   │   ├── cheatsheet.md
+│   │   │   └── project-templates.md
+│   │   ├── testing/
+│   │   │   ├── integration-testing.cs
+│   │   │   ├── mocking.cs
+│   │   │   ├── performance-testing.cs
+│   │   │   ├── test-driven-development.cs
+│   │   │   └── unit-testing.cs
+│   │   └── web-api/
+│   │       ├── authentication.cs
+│   │       ├── basic-controller.cs
+│   │       ├── middleware.cs
+│   │       ├── model-validation.cs
+│   │       └── swagger-setup.cs
+│   └── README.md
+├── C++/
+│   ├── .vscode/
+│   │   ├── c_cpp_properties.json
+│   │   ├── launch.json
+│   │   ├── settings.json
+│   │   └── tasks.json
+│   ├── 3D Surface Visualizer and Optimizer/
+│   ├── Chess/
+│   ├── Console Based Simple Calculator/
+│   ├── Cryptocurrency Exchange Platform/
+│   ├── data/
+│   │   ├── 100-Random/
+│   │   │   ├── Object_Oriented_Programming.cpp
+│   │   │   └── Object_Oriented_Programming.md
+│   │   ├── 1D_Arrays/
+│   │   │   ├── ArrayAccessModification.md
+│   │   │   ├── ArrayConcepts.md
+│   │   │   ├── ArrayDeclarationInitialization.md
+│   │   │   ├── ArrayOperations.md
+│   │   │   ├── ArraysAndFunctions.md
+│   │   │   ├── CommonArrayPitfalls.md
+│   │   │   └── Overview.md
+│   │   ├── 2D_Arrays/
+│   │   │   └── Overview.md
+│   │   ├── advanced/
+│   │   │   ├── arrays.md
+│   │   │   ├── class objects.md
+│   │   │   ├── concurrency.md
+│   │   │   ├── design-patterns.md
+│   │   │   ├── file io.md
+│   │   │   ├── memorymanagement.md
+│   │   │   ├── modern-cpp.md
+│   │   │   ├── string.md
+│   │   │   └── structs.md
+│   │   ├── advanced_topics/
+│   │   │   ├── Concurrency_and_Multithreading.cpp
+│   │   │   ├── Concurrency_and_Multithreading.md
+│   │   │   ├── Exception_Handling.cpp
+│   │   │   ├── Exception_Handling.md
+│   │   │   ├── Modern_Cpp_Best_Practices.cpp
+│   │   │   ├── Modern_Cpp_Best_Practices.md
+│   │   │   ├── Network_Programming_and_Sockets.cpp
+│   │   │   ├── Network_Programming_and_Sockets.md
+│   │   │   ├── Smart_Pointers.cpp
+│   │   │   ├── Smart_Pointers.md
+│   │   │   ├── Templates_and_STL.cpp
+│   │   │   ├── Templates_and_STL.md
+│   │   │   ├── Templates.cpp
+│   │   │   └── Templates.md
+│   │   ├── algorithms/
+│   │   │   ├── Algorithms.cpp
+│   │   │   └── Algorithms.md
+│   │   ├── AllConceptsTogether/
+│   │   │   └── Overview.md
+│   │   ├── assignment 1/
+│   │   │   ├── InventoryCleanup.h
+│   │   │   ├── MenuManagementSystem.h
+│   │   │   ├── Q1.cpp
+│   │   │   ├── Q1.md
+│   │   │   ├── Q1.pdf
+│   │   │   ├── Q1.png
+│   │   │   ├── Q1.txt
+│   │   │   ├── Q2.cpp
+│   │   │   ├── Q2.md
+│   │   │   ├── Q2.png
+│   │   │   ├── Q3.cpp
+│   │   │   ├── Q3.md
+│   │   │   ├── Q3.png
+│   │   │   ├── Q4.cpp
+│   │   │   ├── Q4.md
+│   │   │   ├── Q4.png
+│   │   │   ├── Sample Input Output for Question 2.pdf
+│   │   │   ├── SE Assignment-1 (1).pdf
+│   │   │   ├── ShoppingCartManagementSystem.h
+│   │   │   ├── sorted_menu.txt
+│   │   │   └── ThesaurusBasedWritingAssistant.h
+│   │   ├── Basics/
+│   │   │   ├── arrays.md
+│   │   │   ├── control-flow.md
+│   │   │   ├── datatypes.md
+│   │   │   ├── functions.md
+│   │   │   ├── introduction.md
+│   │   │   ├── loops.md
+│   │   │   ├── oop.md
+│   │   │   ├── operations.md
+│   │   │   └── variables.md
+│   │   ├── CharArrays/
+│   │   │   └── Overview.md
+│   │   ├── ClassesAndObjects/
+│   │   │   └── Overview.md
+│   │   ├── Constructors/
+│   │   │   └── Overview.md
+│   │   ├── core_concepts/
+│   │   │   ├── File_Handling_and_Streams.cpp
+│   │   │   ├── File_Handling_and_Streams.md
+│   │   │   ├── Functions_and_Program_Organization.cpp
+│   │   │   ├── Functions_and_Program_Organization.md
+│   │   │   ├── Input_Output_and_Control_Flow.cpp
+│   │   │   ├── Input_Output_and_Control_Flow.md
+│   │   │   ├── Operators_and_Expressions.cpp
+│   │   │   ├── Operators_and_Expressions.md
+│   │   │   ├── Pointers_and_Memory_Management.cpp
+│   │   │   ├── Pointers_and_Memory_Management.md
+│   │   │   ├── Variables_and_Data_Types.cpp
+│   │   │   └── Variables_and_Data_Types.md
+│   │   ├── data_structures/
+│   │   │   ├── Arrays_and_Strings.cpp
+│   │   │   ├── Arrays_and_Strings.md
+│   │   │   ├── Structures_Unions_and_Enums.cpp
+│   │   │   └── Structures_Unions_and_Enums.md
+│   │   ├── design_patterns/
+│   │   │   ├── Design_Patterns.cpp
+│   │   │   └── Design_Patterns.md
+│   │   ├── Destructors/
+│   │   │   └── Overview.md
+│   │   ├── DynamicMemoryAllocation/
+│   │   │   ├── DynamicArrays.md
+│   │   │   ├── MemoryLeaksDanglingPointers.md
+│   │   │   ├── NewDeleteOperators.md
+│   │   │   ├── Overview.md
+│   │   │   ├── PracticalExamples.md
+│   │   │   └── StackVsHeap.md
+│   │   ├── Encapsulation/
+│   │   │   └── Overview.md
+│   │   ├── explainC++/
+│   │   │   ├── cpp_1_memory_management.md
+│   │   │   ├── cpp_2_oop.md
+│   │   │   ├── cpp_3_stl.md
+│   │   │   ├── cpp_4_concurrency.md
+│   │   │   └── cpp_5_templates.md
+│   │   ├── Files/
+│   │   │   ├── Files-CSVFiles-Cpp.pdf
+│   │   │   ├── Files-Reading-Cpp.pdf
+│   │   │   └── Files-Writing-Cpp.pdf
+│   │   ├── Functions/
+│   │   │   ├── definingfunction.md
+│   │   │   ├── PArameters.md
+│   │   │   ├── pointers.md
+│   │   │   ├── REcursion.md
+│   │   │   └── return values.md
+│   │   ├── GettersAndSetters/
+│   │   │   └── Overview.md
+│   │   ├── getting_started/
+│   │   │   ├── Hello_World.cpp
+│   │   │   ├── Introduction.cpp
+│   │   │   └── Introduction.md
+│   │   ├── intermediate/
+│   │   │   ├── exceptions.md
+│   │   │   ├── smart-pointers.md
+│   │   │   ├── stl.md
+│   │   │   └── templates.md
+│   │   ├── izaan temp/
+│   │   │   ├── a
+│   │   │   └── sample3.cpp
+│   │   ├── Labs/
+│   │   │   ├── Files-Lab-Cpp.pdf
+│   │   │   ├── Pointers-Lab-Cpp.pdf
+│   │   │   ├── Strings-Lab-Cpp.pdf
+│   │   │   └── Vectors-Lab-Cpp.pdf
+│   │   ├── mathematics/
+│   │   │   ├── Mathematics.cpp
+│   │   │   └── Mathematics.md
+│   │   ├── oop/
+│   │   │   ├── Solved Problems/
+│   │   │   │   ├── 01) Problem 01.cpp
+│   │   │   │   ├── 01) Problem 01.exe
+│   │   │   │   ├── 01) Problem 02.cpp
+│   │   │   │   └── 01) Problem 02.exe
+│   │   │   ├── 01_composition_and_aggregation.md
+│   │   │   ├── 02_inheritance.md
+│   │   │   ├── 03_virtual_pure_virtual_functions.md
+│   │   │   └── 04_polymorphism.md
+│   │   ├── oop programs/
+│   │   │   ├── 1.cpp
+│   │   │   ├── 10.cpp
+│   │   │   ├── 10.exe
+│   │   │   ├── 11.cpp
+│   │   │   ├── 11.exe
+│   │   │   ├── 12.cpp
+│   │   │   ├── 12.exe
+│   │   │   ├── 13.cpp
+│   │   │   ├── 13.exe
+│   │   │   ├── 14.cpp
+│   │   │   ├── 14.exe
+│   │   │   ├── 15.cpp
+│   │   │   ├── 15.exe
+│   │   │   ├── 16.cpp
+│   │   │   ├── 16.exe
+│   │   │   ├── 17.cpp
+│   │   │   ├── 17.exe
+│   │   │   ├── 18.cpp
+│   │   │   ├── 18.exe
+│   │   │   ├── 19.cpp
+│   │   │   ├── 19.exe
+│   │   │   ├── 2.cpp
+│   │   │   ├── 2.exe
+│   │   │   ├── 20.cpp
+│   │   │   ├── 20.exe
+│   │   │   ├── 21.cpp
+│   │   │   ├── 21.exe
+│   │   │   ├── 22.cpp
+│   │   │   ├── 22.exe
+│   │   │   ├── 23.cpp
+│   │   │   ├── 23.exe
+│   │   │   ├── 24.cpp
+│   │   │   ├── 24.exe
+│   │   │   ├── 25.cpp
+│   │   │   ├── 25.exe
+│   │   │   ├── 26.cpp
+│   │   │   ├── 26.exe
+│   │   │   ├── 27.cpp
+│   │   │   ├── 27.exe
+│   │   │   ├── 28.cpp
+│   │   │   ├── 28.exe
+│   │   │   ├── 29.cpp
+│   │   │   ├── 29.exe
+│   │   │   ├── 3.cpp
+│   │   │   ├── 3.exe
+│   │   │   ├── 30.cpp
+│   │   │   ├── 30.exe
+│   │   │   ├── 31.cpp
+│   │   │   ├── 31.exe
+│   │   │   ├── 32.cpp
+│   │   │   ├── 32.exe
+│   │   │   ├── 33.cpp
+│   │   │   ├── 33.exe
+│   │   │   ├── 34.cpp
+│   │   │   ├── 34.exe
+│   │   │   ├── 35.cpp
+│   │   │   ├── 35.exe
+│   │   │   ├── 36.cpp
+│   │   │   ├── 36.exe
+│   │   │   ├── 37.cpp
+│   │   │   ├── 37.exe
+│   │   │   ├── 38.cpp
+│   │   │   ├── 38.exe
+│   │   │   ├── 39.cpp
+│   │   │   ├── 39.exe
+│   │   │   ├── 4.cpp
+│   │   │   ├── 40.cpp
+│   │   │   ├── 40.exe
+│   │   │   ├── 41.cpp
+│   │   │   ├── 41.exe
+│   │   │   ├── 42.cpp
+│   │   │   ├── 42.exe
+│   │   │   ├── 43.cpp
+│   │   │   ├── 43.exe
+│   │   │   ├── 5.cpp
+│   │   │   ├── 6.cpp
+│   │   │   ├── 6.exe
+│   │   │   ├── 7.cpp
+│   │   │   ├── 7.exe
+│   │   │   ├── 8.cpp
+│   │   │   ├── 8.exe
+│   │   │   ├── 9.cpp
+│   │   │   └── 9.exe
+│   │   ├── Pointers/
+│   │   │   ├── AddressOperator.md
+│   │   │   ├── ComputerMemory.md
+│   │   │   ├── ConstPointers.md
+│   │   │   ├── DereferenceOperator.md
+│   │   │   ├── ModifyingThroughPointers.md
+│   │   │   ├── Overview.md
+│   │   │   ├── PointerArithmetic.md
+│   │   │   ├── PointersAndArrays.md
+│   │   │   ├── PointerToPointer.md
+│   │   │   ├── PracticalExamples.md
+│   │   │   └── WhatIsPointer.md
+│   │   ├── projects/
+│   │   │   ├── Banking_Management_System/
+│   │   │   │   ├── include/
+│   │   │   │   │   ├── account.h
+│   │   │   │   │   └── bank.h
+│   │   │   │   ├── src/
+│   │   │   │   │   └── main.cpp
+│   │   │   │   ├── CMakeLists.txt
+│   │   │   │   └── README.md
+│   │   │   ├── Data_Analytics_Dashboard/
+│   │   │   │   └── README.md
+│   │   │   ├── Ecommerce_Platform/
+│   │   │   │   ├── src/
+│   │   │   │   │   └── main.cpp
+│   │   │   │   └── README.md
+│   │   │   ├── Game_Engine_Framework/
+│   │   │   │   ├── src/
+│   │   │   │   │   └── main.cpp
+│   │   │   │   └── README.md
+│   │   │   ├── Hospital_Management_System/
+│   │   │   │   └── README.md
+│   │   │   └── README.md
+│   │   ├── SmartPointers/
+│   │   │   ├── Overview.md
+│   │   │   ├── PracticalExamples.md
+│   │   │   ├── ProblemWithRawPointers.md
+│   │   │   ├── SharedPtr.md
+│   │   │   ├── UniquePtr.md
+│   │   │   ├── WeakPtr.md
+│   │   │   └── WhatIsSmartPointer.md
+│   │   ├── Vectors/
+│   │   │   ├── Vectors-2DArrays-Cpp.pdf
+│   │   │   ├── Vectors-ArrayBasics-Cpp.pdf
+│   │   │   └── Vectors-VectorBasics-Cpp.pdf
+│   │   ├── basics.md
+│   │   ├── functions.md
+│   │   ├── PROJECTS_SUMMARY.md
+│   │   └── README.md
+│   ├── LeetCode/
+│   ├── Quantum/
+│   ├── .gitignore
+│   ├── .gitmodules
+│   └── README.md
+├── Go/
+│   ├── data/
+│   │   ├── 01-hello/
+│   │   │   ├── formatted.go
+│   │   │   ├── input.go
+│   │   │   ├── main.go
+│   │   │   ├── multiple.go
+│   │   │   ├── README.md
+│   │   │   └── variables.go
+│   │   ├── 02-variables/
+│   │   │   ├── constants.go
+│   │   │   ├── main.go
+│   │   │   ├── pointers.go
+│   │   │   ├── scope.go
+│   │   │   ├── short-declaration.go
+│   │   │   └── types.go
+│   │   ├── 03-control-flow/
+│   │   │   ├── conditions.go
+│   │   │   ├── defer.go
+│   │   │   ├── loops.go
+│   │   │   ├── main.go
+│   │   │   ├── panic-recover.go
+│   │   │   └── switch.go
+│   │   ├── 04-functions/
+│   │   │   ├── closures.go
+│   │   │   ├── higher-order.go
+│   │   │   ├── main.go
+│   │   │   ├── multiple-returns.go
+│   │   │   ├── README.md
+│   │   │   └── recursion.go
+│   │   ├── 05-collections/
+│   │   │   ├── arrays.go
+│   │   │   ├── main.go
+│   │   │   ├── maps.go
+│   │   │   ├── README.md
+│   │   │   ├── slices-advanced.go
+│   │   │   └── structs-collections.go
+│   │   ├── 06-structs-interfaces/
+│   │   │   ├── embedding.go
+│   │   │   ├── interfaces.go
+│   │   │   ├── main.go
+│   │   │   ├── methods.go
+│   │   │   ├── polymorphism.go
+│   │   │   └── README.md
+│   │   ├── 07-error-handling/
+│   │   │   ├── best-practices.go
+│   │   │   ├── custom-errors.go
+│   │   │   ├── error-patterns.go
+│   │   │   ├── main.go
+│   │   │   ├── panic-recovery.go
+│   │   │   └── README.md
+│   │   ├── 08-concurrency-goroutines/
+│   │   │   ├── goroutine-lifecycle.go
+│   │   │   ├── main.go
+│   │   │   ├── README.md
+│   │   │   ├── sync-patterns.go
+│   │   │   ├── worker-pool.go
+│   │   │   └── worker-pools.go
+│   │   ├── 09-channels/
+│   │   │   ├── advanced-channels.go
+│   │   │   ├── channel-patterns.go
+│   │   │   ├── main.go
+│   │   │   ├── README.md
+│   │   │   ├── select-patterns.go
+│   │   │   └── select-timeout.go
+│   │   ├── 10-packages-modules/
+│   │   │   ├── dependency-management.go
+│   │   │   ├── main.go
+│   │   │   ├── module-init.go
+│   │   │   ├── module-workspace.go
+│   │   │   ├── package-design.go
+│   │   │   └── README.md
+│   │   ├── 11-testing/
+│   │   │   ├── benchmark.go
+│   │   │   ├── calculator_test.go
+│   │   │   ├── formatter_test.go
+│   │   │   ├── integration_test.go
+│   │   │   ├── main.go
+│   │   │   └── validator_test.go
+│   │   ├── 12-web-development/
+│   │   │   ├── database-integration.go
+│   │   │   ├── json-handler.go
+│   │   │   ├── main.go
+│   │   │   ├── middleware.go
+│   │   │   ├── README.md
+│   │   │   └── rest-api.go
+│   │   ├── 13-advanced-patterns/
+│   │   │   ├── builder.go
+│   │   │   ├── design-patterns.go
+│   │   │   ├── main.go
+│   │   │   ├── observer.go
+│   │   │   ├── README.md
+│   │   │   └── strategy.go
+│   │   ├── 14-performance-optimization/
+│   │   │   ├── benchmark-profiling.go
+│   │   │   ├── concurrency-patterns.go
+│   │   │   ├── main.go
+│   │   │   ├── memory-pool.go
+│   │   │   ├── profiling-tools.go
+│   │   │   └── README.md
+│   │   ├── 15-database/
+│   │   │   ├── connection-pool.go
+│   │   │   ├── database-migrations.go
+│   │   │   ├── mysql-crud.go
+│   │   │   ├── orm-basics.go
+│   │   │   ├── postgres-json.go
+│   │   │   └── sqlite-basic.go
+│   │   ├── 17-microservices/
+│   │   │   ├── client.go
+│   │   │   ├── discovery.go
+│   │   │   ├── main.go
+│   │   │   ├── middleware.go
+│   │   │   └── service.go
+│   │   ├── 18-grpc/
+│   │   │   ├── client.go
+│   │   │   ├── interceptor.go
+│   │   │   ├── main.go
+│   │   │   ├── product_service.go
+│   │   │   └── user_service.go
+│   │   ├── 19-caching/
+│   │   │   ├── cache_patterns.go
+│   │   │   ├── distributed_cache.go
+│   │   │   ├── in_memory_cache.go
+│   │   │   ├── main.go
+│   │   │   └── redis_cache.go
+│   │   ├── 20-logging/
+│   │   │   ├── async_logger.go
+│   │   │   ├── context_logger.go
+│   │   │   ├── main.go
+│   │   │   ├── rotating_logger.go
+│   │   │   └── structured_logger.go
+│   │   ├── 21-security/
+│   │   │   ├── auth.go
+│   │   │   ├── authorization.go
+│   │   │   ├── encryption.go
+│   │   │   ├── input_validation.go
+│   │   │   ├── main.go
+│   │   │   └── rate_limiter.go
+│   │   ├── advanced/
+│   │   │   ├── channels.md
+│   │   │   ├── goroutines.md
+│   │   │   ├── interfaces.md
+│   │   │   ├── microservices.md
+│   │   │   ├── performance-optimization.md
+│   │   │   ├── slices.md
+│   │   │   ├── structs.md
+│   │   │   ├── testing.md
+│   │   │   └── web-programming.md
+│   │   ├── basics/
+│   │   │   ├── arrays.md
+│   │   │   ├── control flow.md
+│   │   │   ├── control-structures.md
+│   │   │   ├── datatypes.md
+│   │   │   ├── functions.md
+│   │   │   ├── introduction.md
+│   │   │   ├── operators.md
+│   │   │   ├── strings.md
+│   │   │   └── variables.md
+│   │   ├── calculator/
+│   │   │   ├── advanced.go
+│   │   │   ├── calculator.go
+│   │   │   ├── README.md
+│   │   │   ├── scientific.go
+│   │   │   └── statistics.go
+│   │   ├── explainGO/
+│   │   │   ├── go_01_introduction.md
+│   │   │   ├── go_02_syntax_and_types.md
+│   │   │   ├── go_03_control_flow.md
+│   │   │   ├── go_04_functions_and_concurrency.md
+│   │   │   └── go_05_packages_and_tooling.md
+│   │   ├── formatter/
+│   │   │   ├── data-formatter.go
+│   │   │   ├── formatter.go
+│   │   │   ├── README.md
+│   │   │   ├── template-formatter.go
+│   │   │   └── text-formatter.go
+│   │   ├── functions/
+│   │   │   ├── functions.md
+│   │   │   ├── multiple return values.md
+│   │   │   ├── parameters.md
+│   │   │   ├── recursion.md
+│   │   │   └── return values.md
+│   │   ├── intermediate/
+│   │   │   ├── concurrency.md
+│   │   │   ├── error-handling.md
+│   │   │   ├── interfaces.md
+│   │   │   └── structs.md
+│   │   ├── lessons/
+│   │   │   ├── 01-introduction.md
+│   │   │   ├── 02-variables-and-types.md
+│   │   │   ├── 03-control-flow.md
+│   │   │   ├── 04-functions.md
+│   │   │   ├── 05-collections.md
+│   │   │   ├── 06-structs-and-interfaces.md
+│   │   │   ├── 07-error-handling.md
+│   │   │   ├── 08-concurrency-goroutines.md
+│   │   │   ├── 09-channels.md
+│   │   │   ├── 10-packages-modules.md
+│   │   │   └── 11-testing.md
+│   │   ├── validator/
+│   │   │   ├── advanced-validation.go
+│   │   │   ├── README.md
+│   │   │   ├── security-validation.go
+│   │   │   └── validator.go
+│   │   └── go.mod
+│   ├── validator/
+│   │   ├── credit_card.go
+│   │   └── email.go
+│   └── README.md
+├── Java/
+│   ├── data/
+│   │   ├── 04-Exception-Handling/
+│   │   │   ├── ExceptionHandlingExample.java
+│   │   │   └── ExceptionHandlingExample.md
+│   │   ├── 05-Collections-Framework/
+│   │   │   ├── CollectionsFrameworkExample.java
+│   │   │   └── CollectionsFrameworkExample.md
+│   │   ├── 06-File-IO/
+│   │   │   ├── FileIOExample.java
+│   │   │   └── FileIOExample.md
+│   │   ├── 07-Multithreading/
+│   │   │   ├── MultithreadingExample.java
+│   │   │   └── MultithreadingExample.md
+│   │   ├── 08-Networking/
+│   │   │   ├── NetworkingExample.java
+│   │   │   └── NetworkingExample.md
+│   │   ├── 09-JDBC/
+│   │   │   ├── JDBCExample.java
+│   │   │   └── JDBCExample.md
+│   │   ├── 10-Advanced-Topics/
+│   │   │   ├── AdvancedTopicsExample.java
+│   │   │   └── AdvancedTopicsExample.md
+│   │   ├── Abstract-Classes/
+│   │   │   ├── AbstractClassesExample.java
+│   │   │   └── AbstractClassesExample.md
+│   │   ├── Abstraction/
+│   │   │   ├── AbstractionExample.java
+│   │   │   └── AbstractionExample.md
+│   │   ├── advanced/
+│   │   │   ├── claases and objects.md
+│   │   │   ├── design-patterns.md
+│   │   │   ├── exception handling.md
+│   │   │   ├── file handling.md
+│   │   │   ├── inheritence .md
+│   │   │   ├── interfaces.md
+│   │   │   ├── lambda.md
+│   │   │   ├── multithreading.md
+│   │   │   └── streams.md
+│   │   ├── advanced_java/
+│   │   │   └── Advanced Features.java
+│   │   ├── algorithms/
+│   │   │   ├── Binary Search Algorithm.java
+│   │   │   ├── Breadth-First Search Algorithm.java
+│   │   │   ├── Depth-First Search Algorithm.java
+│   │   │   ├── Dynamic Programming.java
+│   │   │   ├── dynamic_programming.md
+│   │   │   ├── graph_algorithms.md
+│   │   │   ├── Luhn Algorithm.java
+│   │   │   ├── Merge Sort Algorithm.java
+│   │   │   ├── N-Queens Algorithm.java
+│   │   │   ├── Quicksort Algorithm.java
+│   │   │   ├── README.md
+│   │   │   ├── Search Algorithms.java
+│   │   │   ├── search_algorithms.md
+│   │   │   ├── Selection Sort Algorithm.java
+│   │   │   ├── Shortest Path Algorithm.java
+│   │   │   ├── sorting_algorithms.md
+│   │   │   └── Tower of Hanoi Algorithm.java
+│   │   ├── api_development/
+│   │   │   ├── authentication.md
+│   │   │   ├── database.md
+│   │   │   ├── FastAPI REST API.java
+│   │   │   ├── quick_start.md
+│   │   │   └── README.md
+│   │   ├── Arrays/
+│   │   │   ├── ArraysExample.java
+│   │   │   └── ArraysExample.md
+│   │   ├── basics/
+│   │   │   ├── arrays.md
+│   │   │   ├── control flow.md
+│   │   │   ├── control-flow.md
+│   │   │   ├── data-types.md
+│   │   │   ├── datatypes.md
+│   │   │   ├── intro.md
+│   │   │   ├── operators.md
+│   │   │   └── variables.md
+│   │   ├── Classes-Objects/
+│   │   │   ├── ClassesObjectsExample.java
+│   │   │   └── ClassesObjectsExample.md
+│   │   ├── concepts/
+│   │   │   ├── programming_paradigms.md
+│   │   │   └── README.md
+│   │   ├── concurrency/
+│   │   │   └── Asyncio Concurrency.java
+│   │   ├── Control-Statements/
+│   │   │   ├── ControlStatementsExample.java
+│   │   │   └── ControlStatementsExample.md
+│   │   ├── data_science/
+│   │   │   ├── Data Analysis.java
+│   │   │   └── Machine Learning.java
+│   │   ├── data_structures/
+│   │   │   ├── Adjacency List to Matrix Converter.java
+│   │   │   ├── advanced_data_structures.md
+│   │   │   ├── Graph Implementation.java
+│   │   │   ├── Hash Table.java
+│   │   │   ├── Linked List.java
+│   │   │   ├── README.md
+│   │   │   └── Stack Queue Tree.java
+│   │   ├── Data-Types/
+│   │   │   ├── DataTypesExample.java
+│   │   │   └── DataTypesExample.md
+│   │   ├── database/
+│   │   │   └── SQLAlchemy Operations.java
+│   │   ├── deployment/
+│   │   │   └── Docker Deployment.java
+│   │   ├── Encapsulation/
+│   │   │   ├── EncapsulationExample.java
+│   │   │   └── EncapsulationExample.md
+│   │   ├── examples/
+│   │   │   ├── advanced/
+│   │   │   │   └── machine_learning_pipeline.java
+│   │   │   ├── beginner/
+│   │   │   │   └── hello_world_variations.java
+│   │   │   ├── intermediate/
+│   │   │   │   ├── api_weather_example.java
+│   │   │   │   └── web_scraping_example.java
+│   │   │   └── README.md
+│   │   ├── faq/
+│   │   │   ├── common_java_questions.md
+│   │   │   └── README.md
+│   │   ├── functions/
+│   │   │   ├── method overloading.md
+│   │   │   ├── methods.md
+│   │   │   ├── parameters.md
+│   │   │   ├── recursion.md
+│   │   │   └── return value.md
+│   │   ├── games/
+│   │   │   ├── Game Character Stats Tracker.java
+│   │   │   ├── Number Guessing Game.java
+│   │   │   ├── Player Interface.java
+│   │   │   ├── RPG Character.java
+│   │   │   └── Tic Tac Toe.java
+│   │   ├── getting_started/
+│   │   │   └── README.md
+│   │   ├── Inheritance/
+│   │   │   ├── InheritanceExample.java
+│   │   │   └── InheritanceExample.md
+│   │   ├── Interfaces/
+│   │   │   └── InterfacesExample.java
+│   │   ├── intermediate/
+│   │   │   ├── collections.md
+│   │   │   ├── exceptions.md
+│   │   │   ├── generics.md
+│   │   │   └── oops.md
+│   │   ├── learning_curriculum/
+│   │   │   ├── learning_path.md
+│   │   │   ├── level0_absolute_beginner.md
+│   │   │   ├── level1_java_fundamentals.md
+│   │   │   ├── level2_intermediate_programming.md
+│   │   │   ├── README.md
+│   │   │   ├── resources_and_tools.md
+│   │   │   └── ULTIMATE_PYTHON_GUIDE.md
+│   │   ├── Linked-Lists/
+│   │   │   ├── LinkedListsExample.java
+│   │   │   └── LinkedListsExample.md
+│   │   ├── mathematics/
+│   │   │   ├── Bisection Method.java
+│   │   │   ├── Data Visualizer.java
+│   │   │   ├── Nth Fibonacci Number Calculator.java
+│   │   │   ├── Number Pattern Generator.java
+│   │   │   ├── Polygon Area Calculator.java
+│   │   │   └── Scientific Calculator.java
+│   │   ├── Methods/
+│   │   │   ├── MethodsExample.java
+│   │   │   └── MethodsExample.md
+│   │   ├── Operators/
+│   │   │   ├── OperatorsExample.java
+│   │   │   └── OperatorsExample.md
+│   │   ├── Polymorphism/
+│   │   │   ├── PolymorphismExample.java
+│   │   │   └── PolymorphismExample.md
+│   │   ├── projects/
+│   │   │   ├── Budget App.java
+│   │   │   ├── Email Simulator.java
+│   │   │   ├── Media Catalog.java
+│   │   │   ├── Musical Instrument Inventory.java
+│   │   │   ├── README.md
+│   │   │   ├── Salary Tracker.java
+│   │   │   ├── Task Manager.java
+│   │   │   └── Weather App.java
+│   │   ├── Queues/
+│   │   │   ├── QueuesExample.java
+│   │   │   └── QueuesExample.md
+│   │   ├── reference/
+│   │   │   ├── OVERVIEW.md
+│   │   │   ├── QUICK_REFERENCE.md
+│   │   │   └── README.md
+│   │   ├── Stacks/
+│   │   │   ├── StacksExample.java
+│   │   │   └── StacksExample.md
+│   │   ├── Strings/
+│   │   │   ├── StringsExample.java
+│   │   │   └── StringsExample.md
+│   │   ├── testing/
+│   │   │   └── Pytest Examples.java
+│   │   ├── Trees/
+│   │   │   ├── TreesExample.java
+│   │   │   └── TreesExample.md
+│   │   ├── tutorials/
+│   │   │   ├── 00) Index.md
+│   │   │   ├── 01) IO Statements.java
+│   │   │   ├── 01) IO Statements.md
+│   │   │   ├── 02) Conditional Statements.java
+│   │   │   ├── 02) Conditional Statements.md
+│   │   │   ├── 03) Repetitive Statements.java
+│   │   │   ├── 03) Repetitive Statements.md
+│   │   │   ├── 04) Functions.java
+│   │   │   ├── 04) Functions.md
+│   │   │   └── advanced_programming_concepts.md
+│   │   ├── utilities/
+│   │   │   ├── Caesar Cipher.java
+│   │   │   ├── Discount Calculator.java
+│   │   │   ├── File Manager.java
+│   │   │   ├── ISBN Validator.java
+│   │   │   ├── Medical Data Validator.java
+│   │   │   ├── Password Generator.java
+│   │   │   ├── Pin Extractor.java
+│   │   │   ├── Planet Class.java
+│   │   │   └── User Configuration Manager.java
+│   │   ├── Variables/
+│   │   │   ├── VariablesExample.java
+│   │   │   └── VariablesExample.md
+│   │   ├── web_development/
+│   │   │   └── Flask Blog App.java
+│   │   ├── README_code.md
+│   │   ├── README_docs.md
+│   │   └── README.md
+│   ├── .gitignore
+│   ├── README.md
+│   └── requirements.txt
+├── JavaScript/
+│   ├── data/
+│   │   ├── advanced/
+│   │   │   ├── 01-async-programming.md
+│   │   │   ├── 02-es6-features.md
+│   │   │   ├── 03-closures-and-scope.md
+│   │   │   ├── 04-prototypes-and-inheritance.md
+│   │   │   ├── 05-error-handling.md
+│   │   │   ├── arrays.md
+│   │   │   ├── async.md
+│   │   │   ├── dom manipulation.md
+│   │   │   ├── objects.md
+│   │   │   ├── performance-optimization.md
+│   │   │   ├── promises
+│   │   │   ├── security.md
+│   │   │   ├── testing.md
+│   │   │   └── web-workers.md
+│   │   ├── advanced_topics/
+│   │   │   ├── Advanced_Promises.js
+│   │   │   ├── Advanced_Promises.md
+│   │   │   ├── Async_Await.js
+│   │   │   ├── Async_Await.md
+│   │   │   ├── ES_Modules.js
+│   │   │   └── ES_Modules.md
+│   │   ├── algorithms/
+│   │   │   ├── Algorithms.js
+│   │   │   └── Algorithms.md
+│   │   ├── basics/
+│   │   │   ├── 01-variables-and-types.md
+│   │   │   ├── 02-functions.md
+│   │   │   ├── 03-arrays.md
+│   │   │   ├── 04-objects.md
+│   │   │   ├── 05-control-flow.md
+│   │   │   ├── arrays.md
+│   │   │   ├── control-flow.md
+│   │   │   ├── datatypes.md
+│   │   │   ├── functions.md
+│   │   │   ├── introduction.md
+│   │   │   ├── loops.md
+│   │   │   ├── objects.md
+│   │   │   ├── operations.md
+│   │   │   └── variables.md
+│   │   ├── data_science_and_ml/
+│   │   │   ├── Data_Processing.js
+│   │   │   └── Data_Processing.md
+│   │   ├── data_structures/
+│   │   │   ├── Built_in_Structures.js
+│   │   │   └── Built_in_Structures.md
+│   │   ├── dom_and_browser/
+│   │   │   ├── DOM_and_Browser.js
+│   │   │   └── DOM_and_Browser.md
+│   │   ├── explainJS/
+│   │   │   ├── 01_overview_and_history.md
+│   │   │   ├── 02_syntax_and_data_types.md
+│   │   │   ├── 03_functions_and_oop.md
+│   │   │   ├── 04_async_and_event_loop.md
+│   │   │   └── 05_modern_features_and_ecosystem.md
+│   │   ├── frameworks/
+│   │   │   ├── 01-react-basics.md
+│   │   │   ├── 02-nodejs-fundamentals.md
+│   │   │   ├── 03-express-js.md
+│   │   │   ├── 04-vue-js.md
+│   │   │   └── 05-modern-javascript-tools.md
+│   │   ├── functions/
+│   │   │   ├── arrow func.md
+│   │   │   ├── callbacks.md
+│   │   │   ├── defining function.md
+│   │   │   ├── parameters.md
+│   │   │   └── return values.md
+│   │   ├── fundamentals/
+│   │   │   ├── Variables_and_Strings.js
+│   │   │   └── Variables_and_Strings.md
+│   │   ├── getting_started/
+│   │   │   ├── 01-introduction.md
+│   │   │   ├── 02-javascript-basics.md
+│   │   │   └── Hello_World.js
+│   │   ├── intermediate/
+│   │   │   ├── async-programming.md
+│   │   │   ├── dom-manipulation.md
+│   │   │   ├── error-handling.md
+│   │   │   └── es6-features.md
+│   │   ├── oop/
+│   │   │   ├── Classes_and_Inheritance.js
+│   │   │   └── Classes_and_Inheritance.md
+│   │   ├── projects/
+│   │   │   ├── Ecommerce_Platform/
+│   │   │   │   ├── src/
+│   │   │   │   │   └── js/
+│   │   │   │   │       └── main.js
+│   │   │   │   └── README.md
+│   │   │   └── README.md
+│   │   ├── testing/
+│   │   │   ├── Testing.js
+│   │   │   └── Testing.md
+│   │   ├── web_and_api/
+│   │   │   ├── Express_REST_API.js
+│   │   │   └── Express_REST_API.md
+│   │   └── README.md
+│   ├── .gitmodules
+│   ├── package-lock.json
+│   └── README.md
+├── PHP/
+│   ├── data/
+│   │   ├── 01-basics/
+│   │   │   ├── exercise1.php
+│   │   │   ├── exercise2.php
+│   │   │   ├── exercise3.php
+│   │   │   ├── README.md
+│   │   │   ├── strings-manipulation.php
+│   │   │   └── variables-data-types.php
+│   │   ├── 02-control-structures/
+│   │   │   ├── conditionals-decisions.php
+│   │   │   ├── exercise1.php
+│   │   │   ├── exercise2.php
+│   │   │   ├── exercise3.php
+│   │   │   ├── loops-iterations.php
+│   │   │   └── README.md
+│   │   ├── 03-functions/
+│   │   │   ├── advanced-functions.php
+│   │   │   ├── exercise1.php
+│   │   │   ├── exercise2.php
+│   │   │   ├── exercise3.php
+│   │   │   ├── function-scope-closures.php
+│   │   │   └── README.md
+│   │   ├── 04-arrays/
+│   │   │   ├── array-functions-methods.php
+│   │   │   ├── examples.php
+│   │   │   ├── exercise1.php
+│   │   │   ├── exercise2.php
+│   │   │   ├── exercise3.php
+│   │   │   ├── guide.md
+│   │   │   ├── multidimensional-arrays.php
+│   │   │   └── README.md
+│   │   ├── 05-oop/
+│   │   │   ├── advanced-oop-concepts.php
+│   │   │   ├── design-patterns.php
+│   │   │   ├── exercise1.php
+│   │   │   ├── exercise2.php
+│   │   │   ├── exercise3.php
+│   │   │   └── README.md
+│   │   ├── 06-forms/
+│   │   │   ├── exercise1.php
+│   │   │   ├── exercise2.php
+│   │   │   ├── exercise3.php
+│   │   │   ├── file-uploads-handling.php
+│   │   │   ├── form-validation-security.php
+│   │   │   └── README.md
+│   │   ├── 07-database/
+│   │   │   ├── database-connections.php
+│   │   │   ├── exercise1.php
+│   │   │   ├── exercise2.php
+│   │   │   ├── exercise3.php
+│   │   │   └── README.md
+│   │   ├── 08-projects/
+│   │   │   ├── blog-system/
+│   │   │   │   ├── views/
+│   │   │   │   │   ├── admin.php
+│   │   │   │   │   ├── create_post.php
+│   │   │   │   │   ├── edit_post.php
+│   │   │   │   │   ├── home.php
+│   │   │   │   │   ├── login.php
+│   │   │   │   │   ├── register.php
+│   │   │   │   │   └── view_post.php
+│   │   │   │   ├── index.php
+│   │   │   │   └── README.md
+│   │   │   ├── contact-manager/
+│   │   │   │   ├── api/
+│   │   │   │   │   └── contacts.php
+│   │   │   │   ├── views/
+│   │   │   │   │   ├── add.php
+│   │   │   │   │   ├── api.php
+│   │   │   │   │   ├── edit.php
+│   │   │   │   │   ├── export.php
+│   │   │   │   │   ├── home.php
+│   │   │   │   │   └── view.php
+│   │   │   │   ├── index.php
+│   │   │   │   └── README.md
+│   │   │   ├── ecommerce-cart/
+│   │   │   │   ├── views/
+│   │   │   │   │   ├── cart.php
+│   │   │   │   │   ├── home.php
+│   │   │   │   │   ├── login.php
+│   │   │   │   │   ├── product_detail.php
+│   │   │   │   │   ├── products.php
+│   │   │   │   │   └── register.php
+│   │   │   │   ├── index.php
+│   │   │   │   └── README.md
+│   │   │   ├── quiz-system/
+│   │   │   │   ├── views/
+│   │   │   │   │   ├── home.php
+│   │   │   │   │   ├── results.php
+│   │   │   │   │   └── take_quiz.php
+│   │   │   │   ├── index.php
+│   │   │   │   └── README.md
+│   │   │   ├── todo-list/
+│   │   │   │   ├── index.php
+│   │   │   │   └── README.md
+│   │   │   ├── weather-app/
+│   │   │   │   ├── views/
+│   │   │   │   │   ├── home.php
+│   │   │   │   │   └── weather_display.php
+│   │   │   │   ├── index.php
+│   │   │   │   └── README.md
+│   │   │   └── README.md
+│   │   ├── 09-advanced-topics/
+│   │   │   ├── advanced-oop.php
+│   │   │   ├── caching-strategies.php
+│   │   │   ├── design-patterns.php
+│   │   │   ├── error-handling.php
+│   │   │   ├── performance-optimization.php
+│   │   │   └── README.md
+│   │   ├── 10-testing/
+│   │   │   ├── coverage-analysis.php
+│   │   │   ├── database-testing.php
+│   │   │   ├── mocking-stubbing.php
+│   │   │   ├── README.md
+│   │   │   ├── tdd-examples.php
+│   │   │   └── unit-testing.php
+│   │   ├── 11-performance/
+│   │   │   ├── caching-strategies.php
+│   │   │   ├── database-performance.php
+│   │   │   ├── memory-optimization.php
+│   │   │   ├── performance-monitoring.php
+│   │   │   ├── profiling-basics.php
+│   │   │   └── README.md
+│   │   ├── 12-security/
+│   │   │   ├── authentication-security.php
+│   │   │   ├── data-protection.php
+│   │   │   ├── input-validation.php
+│   │   │   ├── README.md
+│   │   │   ├── security-fundamentals.php
+│   │   │   └── security-monitoring.php
+│   │   ├── 13-deployment/
+│   │   │   ├── automation-cicd.php
+│   │   │   ├── deployment-strategies.php
+│   │   │   ├── production-management.php
+│   │   │   ├── README.md
+│   │   │   ├── scaling-performance.php
+│   │   │   └── server-configuration.php
+│   │   ├── 14-best-practices/
+│   │   │   ├── code-quality.php
+│   │   │   ├── coding-standards.php
+│   │   │   ├── design-principles.php
+│   │   │   ├── documentation.php
+│   │   │   ├── README.md
+│   │   │   └── testing-practices.php
+│   │   ├── 15-frameworks/
+│   │   │   ├── framework-architecture.php
+│   │   │   ├── framework-comparison.php
+│   │   │   ├── laravel-basics.php
+│   │   │   ├── other-frameworks.php
+│   │   │   ├── README.md
+│   │   │   └── symfony-basics.php
+│   │   ├── 16-advanced-topics/
+│   │   │   ├── advanced-architecture.php
+│   │   │   ├── advanced-debugging.php
+│   │   │   ├── advanced-php-features.php
+│   │   │   ├── advanced-security.php
+│   │   │   ├── asynchronous-programming.php
+│   │   │   └── README.md
+│   │   ├── 17-tools-utilities/
+│   │   │   ├── build-deployment.php
+│   │   │   ├── development-tools.php
+│   │   │   ├── monitoring-logging.php
+│   │   │   ├── package-management.php
+│   │   │   ├── README.md
+│   │   │   └── testing-tools.php
+│   │   ├── 18-project-showcase/
+│   │   │   ├── ecommerce-platform/
+│   │   │   │   └── index.php
+│   │   │   ├── learning-management-system/
+│   │   │   │   └── index.php
+│   │   │   ├── project-management-tool/
+│   │   │   │   └── index.php
+│   │   │   ├── restful-api-service/
+│   │   │   │   └── index.php
+│   │   │   ├── social-media-app/
+│   │   │   │   └── index.php
+│   │   │   └── README.md
+│   │   ├── 19-career-development/
+│   │   │   ├── interview-preparation.php
+│   │   │   ├── job-market-guide.php
+│   │   │   ├── professional-growth.php
+│   │   │   ├── README.md
+│   │   │   ├── resume-portfolio.php
+│   │   │   └── salary-negotiation.php
+│   │   ├── 20-final-assessment/
+│   │   │   ├── capstone-project.php
+│   │   │   ├── code-review-challenge.php
+│   │   │   ├── knowledge-assessment.php
+│   │   │   ├── practical-projects.php
+│   │   │   ├── README.md
+│   │   │   └── system-design-exercise.php
+│   │   ├── 21-microservices/
+│   │   │   ├── data-management.php
+│   │   │   ├── microservices-basics.php
+│   │   │   ├── monitoring-debugging.php
+│   │   │   ├── README.md
+│   │   │   ├── service-communication.php
+│   │   │   └── service-discovery.php
+│   │   ├── 22-api-development/
+│   │   │   ├── api-documentation.php
+│   │   │   ├── api-performance.php
+│   │   │   ├── api-security.php
+│   │   │   ├── graphql-api.php
+│   │   │   ├── README.md
+│   │   │   └── restful-api.php
+│   │   ├── 23-devops-automation/
+│   │   │   ├── ci-cd-pipelines.php
+│   │   │   ├── containerization.php
+│   │   │   ├── infrastructure-as-code.php
+│   │   │   ├── monitoring-maintenance.php
+│   │   │   ├── README.md
+│   │   │   └── security-devops.php
+│   │   ├── 24-cloud-services/
+│   │   │   ├── aws-services.php
+│   │   │   ├── azure-services.php
+│   │   │   ├── cloud-fundamentals.php
+│   │   │   ├── cloud-native-apps.php
+│   │   │   ├── gcp-services.php
+│   │   │   └── README.md
+│   │   ├── 25-advanced-patterns/
+│   │   │   ├── architectural-patterns.php
+│   │   │   ├── behavioral-patterns.php
+│   │   │   ├── creational-patterns.php
+│   │   │   ├── pattern-combinations.php
+│   │   │   ├── README.md
+│   │   │   └── structural-patterns.php
+│   │   ├── 26-machine-learning/
+│   │   │   ├── data-preprocessing.php
+│   │   │   ├── ml-fundamentals.php
+│   │   │   ├── ml-integration.php
+│   │   │   ├── model-evaluation.php
+│   │   │   ├── practical-ml-applications.php
+│   │   │   └── README.md
+│   │   ├── 27-blockchain-web3/
+│   │   │   ├── blockchain-basics.php
+│   │   │   ├── blockchain-security.php
+│   │   │   ├── decentralized-apps.php
+│   │   │   ├── README.md
+│   │   │   ├── smart-contracts.php
+│   │   │   └── web3-integration.php
+│   │   ├── 28-iot-embedded/
+│   │   │   ├── iot-automation.php
+│   │   │   ├── iot-communication.php
+│   │   │   ├── iot-fundamentals.php
+│   │   │   ├── iot-security.php
+│   │   │   ├── README.md
+│   │   │   └── sensor-data-processing.php
+│   │   ├── 29-game-development/
+│   │   │   ├── 2d-graphics.php
+│   │   │   ├── ai-game-development.php
+│   │   │   ├── game-basics.php
+│   │   │   ├── game-physics.php
+│   │   │   ├── multiplayer-gaming.php
+│   │   │   └── README.md
+│   │   ├── 30-advanced-topics/
+│   │   │   ├── ai-integration.php
+│   │   │   ├── blockchain-advanced.php
+│   │   │   ├── edge-computing.php
+│   │   │   ├── microservices-advanced.php
+│   │   │   ├── quantum-computing.php
+│   │   │   └── README.md
+│   │   ├── advanced/
+│   │   │   ├── api-development.md
+│   │   │   ├── arrays.md
+│   │   │   ├── design-patterns.md
+│   │   │   ├── error handling.md
+│   │   │   ├── ffile handling.md
+│   │   │   ├── microservices.md
+│   │   │   ├── oop.md
+│   │   │   ├── performance-optimization.md
+│   │   │   ├── sessions and cookies.md
+│   │   │   └── testing-strategies.md
+│   │   ├── basics/
+│   │   │   ├── arrays.md
+│   │   │   ├── control-structures.md
+│   │   │   ├── control.md
+│   │   │   ├── datatypes.md
+│   │   │   ├── functions.md
+│   │   │   ├── introduction.md
+│   │   │   ├── operations.md
+│   │   │   ├── strings.md
+│   │   │   └── variables.md
+│   │   ├── examples/
+│   │   │   └── README.md
+│   │   ├── explainPHP/
+│   │   │   ├── 01_PHP_Introduction_and_Basics.md
+│   │   │   ├── 02_PHP_Control_Structures_and_Functions.md
+│   │   │   ├── 03_PHP_Arrays_and_Strings.md
+│   │   │   ├── 04_PHP_OOP.md
+│   │   │   └── 05_PHP_Database_Files_Security.md
+│   │   ├── functions/
+│   │   │   ├── built in functions.md
+│   │   │   ├── functions.md
+│   │   │   ├── parameters.md
+│   │   │   ├── recursion.md
+│   │   │   └── return values.md
+│   │   ├── intermediate/
+│   │   │   ├── database-programming.md
+│   │   │   ├── error-handling.md
+│   │   │   ├── oop-concepts.md
+│   │   │   ├── security.md
+│   │   │   └── web-programming.md
+│   │   ├── resources/
+│   │   │   └── README.md
+│   │   └── README.md
+│   └── README.md
+├── Powershell/
+│   ├── docs/
+│   │   ├── 01-basics.md
+│   │   ├── 02-variables-and-data-types.md
+│   │   ├── 03-operators.md
+│   │   ├── 04-conditional-statements.md
+│   │   ├── 05-loops.md
+│   │   ├── 06-functions.md
+│   │   ├── 07-arrays-and-collections.md
+│   │   ├── 08-hashtables-and-objects.md
+│   │   ├── 09-file-system.md
+│   │   ├── 10-modules-and-scripts.md
+│   │   ├── 11-error-handling.md
+│   │   └── 12-advanced-topics.md
+│   ├── scripts/
+│   │   ├── advanced-examples.ps1
+│   │   ├── basic-examples.ps1
+│   │   ├── intermediate-examples.ps1
+│   │   └── SystemAdministrationToolkit.ps1
+│   └── README.md
+├── Python/
+│   ├── data/
+│   │   ├── advanced/
+│   │   │   ├── async-programming.md
+│   │   │   ├── multiprocessing.md
+│   │   │   ├── network-programming.md
+│   │   │   └── performance-optimization.md
+│   │   ├── advanced_python/
+│   │   │   └── Advanced Features.py
+│   │   ├── ai_ml/
+│   │   │   ├── classical_ml/
+│   │   │   │   ├── kmeans_clustering.py
+│   │   │   │   ├── linear_regression.py
+│   │   │   │   ├── random_forest_classifier.py
+│   │   │   │   └── svm_classifier.py
+│   │   │   ├── neural_networks/
+│   │   │   │   ├── cnn_image_classifier.py
+│   │   │   │   └── simple_nn.py
+│   │   │   └── README.md
+│   │   ├── algorithms/
+│   │   │   ├── Binary Search Algorithm.py
+│   │   │   ├── Breadth-First Search Algorithm.py
+│   │   │   ├── Depth-First Search Algorithm.py
+│   │   │   ├── Dynamic Programming.py
+│   │   │   ├── dynamic_programming.md
+│   │   │   ├── graph_algorithms.md
+│   │   │   ├── Luhn Algorithm.py
+│   │   │   ├── Merge Sort Algorithm.py
+│   │   │   ├── N-Queens Algorithm.py
+│   │   │   ├── Quicksort Algorithm.py
+│   │   │   ├── README.md
+│   │   │   ├── Search Algorithms.py
+│   │   │   ├── search_algorithms.md
+│   │   │   ├── Selection Sort Algorithm.py
+│   │   │   ├── Shortest Path Algorithm.py
+│   │   │   ├── sorting_algorithms.md
+│   │   │   └── Tower of Hanoi Algorithm.py
+│   │   ├── api_development/
+│   │   │   ├── authentication.md
+│   │   │   ├── database.md
+│   │   │   ├── FastAPI REST API.py
+│   │   │   ├── quick_start.md
+│   │   │   └── README.md
+│   │   ├── basics/
+│   │   │   ├── control-flow.md
+│   │   │   ├── data-types.md
+│   │   │   ├── functions.md
+│   │   │   ├── oop.md
+│   │   │   └── variables.md
+│   │   ├── blockchain/
+│   │   │   └── README.md
+│   │   ├── concepts/
+│   │   │   ├── programming_paradigms.md
+│   │   │   └── README.md
+│   │   ├── concurrency/
+│   │   │   └── Asyncio Concurrency.py
+│   │   ├── cybersecurity/
+│   │   │   ├── encryption/
+│   │   │   │   └── aes_encryptor.py
+│   │   │   ├── forensics/
+│   │   │   │   └── file_analyzer.py
+│   │   │   ├── intrusion_detection/
+│   │   │   │   └── simple_ids.py
+│   │   │   ├── network_security/
+│   │   │   │   └── port_scanner.py
+│   │   │   ├── password_security/
+│   │   │   │   └── password_analyzer.py
+│   │   │   ├── web_security/
+│   │   │   │   └── xss_scanner.py
+│   │   │   └── README.md
+│   │   ├── data_science/
+│   │   │   ├── Data Analysis.py
+│   │   │   └── Machine Learning.py
+│   │   ├── data_structures/
+│   │   │   ├── Adjacency List to Matrix Converter.py
+│   │   │   ├── advanced_data_structures.md
+│   │   │   ├── Graph Implementation.py
+│   │   │   ├── Hash Table.py
+│   │   │   ├── Linked List.py
+│   │   │   ├── README.md
+│   │   │   └── Stack Queue Tree.py
+│   │   ├── database/
+│   │   │   └── SQLAlchemy Operations.py
+│   │   ├── deployment/
+│   │   │   └── Docker Deployment.py
+│   │   ├── devops/
+│   │   │   ├── ci_cd/
+│   │   │   │   └── pipeline_builder.py
+│   │   │   ├── cloud_provisioning/
+│   │   │   │   └── aws_manager.py
+│   │   │   ├── containerization/
+│   │   │   │   └── docker_manager.py
+│   │   │   ├── infrastructure_as_code/
+│   │   │   │   └── terraform_deployer.py
+│   │   │   ├── monitoring/
+│   │   │   │   └── metrics_collector.py
+│   │   │   ├── security_scanning/
+│   │   │   │   └── security_scanner.py
+│   │   │   └── README.md
+│   │   ├── examples/
+│   │   │   ├── advanced/
+│   │   │   │   └── machine_learning_pipeline.py
+│   │   │   ├── beginner/
+│   │   │   │   └── hello_world_variations.py
+│   │   │   ├── intermediate/
+│   │   │   │   ├── api_weather_example.py
+│   │   │   │   └── web_scraping_example.py
+│   │   │   └── README.md
+│   │   ├── explainPython/
+│   │   │   ├── python_1_memory.md
+│   │   │   ├── python_2_oop.md
+│   │   │   ├── python_3_async.md
+│   │   │   ├── python_4_internals.md
+│   │   │   └── python_5_advanced.md
+│   │   ├── faq/
+│   │   │   ├── common_python_questions.md
+│   │   │   └── README.md
+│   │   ├── games/
+│   │   │   ├── Game Character Stats Tracker.py
+│   │   │   ├── Number Guessing Game.py
+│   │   │   ├── Player Interface.py
+│   │   │   ├── RPG Character.py
+│   │   │   └── Tic Tac Toe.py
+│   │   ├── getting_started/
+│   │   │   └── README.md
+│   │   ├── hostel management/
+│   │   │   ├── gui.py
+│   │   │   ├── hostelManagementSystem.cpython-311.pyc
+│   │   │   ├── hostelManagementSystem.cpython-312.pyc
+│   │   │   ├── hostelManagementSystem.py
+│   │   │   ├── payment.cpython-311.pyc
+│   │   │   ├── payment.cpython-312.pyc
+│   │   │   ├── payment.py
+│   │   │   ├── payments.csv
+│   │   │   ├── room.cpython-311.pyc
+│   │   │   ├── room.cpython-312.pyc
+│   │   │   ├── room.py
+│   │   │   ├── student.cpython-311.pyc
+│   │   │   ├── student.cpython-312.pyc
+│   │   │   ├── student.py
+│   │   │   └── temp
+│   │   ├── intermediate/
+│   │   │   ├── context-managers.md
+│   │   │   ├── decorators.md
+│   │   │   ├── generators.md
+│   │   │   └── metaprogramming.md
+│   │   ├── iot/
+│   │   │   └── README.md
+│   │   ├── learning_curriculum/
+│   │   │   ├── learning_path.md
+│   │   │   ├── level0_absolute_beginner.md
+│   │   │   ├── level1_python_fundamentals.md
+│   │   │   ├── level2_intermediate_programming.md
+│   │   │   ├── README.md
+│   │   │   ├── resources_and_tools.md
+│   │   │   └── ULTIMATE_PYTHON_GUIDE.md
+│   │   ├── mathematics/
+│   │   │   ├── Bisection Method.py
+│   │   │   ├── Data Visualizer.py
+│   │   │   ├── Nth Fibonacci Number Calculator.py
+│   │   │   ├── Number Pattern Generator.py
+│   │   │   ├── Polygon Area Calculator.py
+│   │   │   └── Scientific Calculator.py
+│   │   ├── projects/
+│   │   │   ├── Budget App.py
+│   │   │   ├── Email Simulator.py
+│   │   │   ├── Media Catalog.py
+│   │   │   ├── Musical Instrument Inventory.py
+│   │   │   ├── README.md
+│   │   │   ├── Salary Tracker.py
+│   │   │   ├── Task Manager.py
+│   │   │   └── Weather App.py
+│   │   ├── reference/
+│   │   │   ├── OVERVIEW.md
+│   │   │   ├── QUICK_REFERENCE.md
+│   │   │   └── README.md
+│   │   ├── robotics/
+│   │   │   ├── computer_vision/
+│   │   │   │   └── object_tracker.py
+│   │   │   ├── movement_control/
+│   │   │   │   └── motor_controller.py
+│   │   │   ├── sensors/
+│   │   │   │   └── sensor_reader.py
+│   │   │   └── README.md
+│   │   ├── testing/
+│   │   │   └── Pytest Examples.py
+│   │   ├── tutorials/
+│   │   │   ├── 00) Index.md
+│   │   │   ├── 01) IO Statements.md
+│   │   │   ├── 01) IO Statements.py
+│   │   │   ├── 02) Conditional Statements.md
+│   │   │   ├── 02) Conditional Statements.py
+│   │   │   ├── 03) Repetitive Statements.md
+│   │   │   ├── 03) Repetitive Statements.py
+│   │   │   ├── 04) Functions.md
+│   │   │   ├── 04) Functions.py
+│   │   │   └── advanced_programming_concepts.md
+│   │   ├── utilities/
+│   │   │   ├── Caesar Cipher.py
+│   │   │   ├── Discount Calculator.py
+│   │   │   ├── File Manager.py
+│   │   │   ├── ISBN Validator.py
+│   │   │   ├── Medical Data Validator.py
+│   │   │   ├── Password Generator.py
+│   │   │   ├── Pin Extractor.py
+│   │   │   ├── Planet Class.py
+│   │   │   └── User Configuration Manager.py
+│   │   ├── web_development/
+│   │   │   └── Flask Blog App.py
+│   │   ├── README_code.md
+│   │   ├── README_docs.md
+│   │   └── README.md
+│   ├── .gitignore
+│   ├── .gitmodules
+│   ├── README.md
+│   └── requirements.txt
+├── Q#/
+│   ├── .github/
+│   │   └── workflows/
+│   │       └── dotnet.yml
+│   ├── 01-introduction/
+│   │   └── HelloQuantum/
+│   │       ├── bin/
+│   │       │   └── Debug/
+│   │       │       └── net6.0/
+│   │       └── obj/
+│   │           ├── Debug/
+│   │           │   └── net6.0/
+│   │           │       ├── ref/
+│   │           │       ├── refint/
+│   │           │       ├── HelloQuantum.AssemblyInfo.cs
+│   │           │       ├── HelloQuantum.AssemblyInfoInputs.cache
+│   │           │       ├── HelloQuantum.assets.cache
+│   │           │       ├── HelloQuantum.csproj.AssemblyReference.cache
+│   │           │       └── HelloQuantum.GeneratedMSBuildEditorConfig.editorconfig
+│   │           ├── HelloQuantum.csproj.nuget.dgspec.json
+│   │           ├── HelloQuantum.csproj.nuget.g.props
+│   │           ├── HelloQuantum.csproj.nuget.g.targets
+│   │           ├── project.assets.json
+│   │           └── project.nuget.cache
+│   ├── data/
+│   │   ├── 01-introduction/
+│   │   │   ├── DumpMachine/
+│   │   │   │   ├── DumpMachine.csproj
+│   │   │   │   └── Program.qs
+│   │   │   ├── FlipAQubit/
+│   │   │   │   ├── FlipAQubit.csproj
+│   │   │   │   └── Program.qs
+│   │   │   ├── HelloQuantum/
+│   │   │   │   ├── global.json
+│   │   │   │   ├── HelloQuantum.csproj
+│   │   │   │   └── Program.qs
+│   │   │   ├── RunMultipleTimes/
+│   │   │   │   ├── Driver.cs
+│   │   │   │   ├── Program.qs
+│   │   │   │   └── RunMultipleTimes.csproj
+│   │   │   ├── 01-what-is-quantum.md
+│   │   │   ├── 02-qsharp-ecosystem.md
+│   │   │   ├── 03-environment-setup.md
+│   │   │   ├── 04-hello-quantum.md
+│   │   │   └── README.md
+│   │   ├── 02-basics/
+│   │   │   ├── DeclaringVariables/
+│   │   │   │   ├── DeclaringVariables.csproj
+│   │   │   │   └── Program.qs
+│   │   │   ├── ForLoop/
+│   │   │   │   ├── ForLoop.csproj
+│   │   │   │   └── Program.qs
+│   │   │   ├── IsPrime/
+│   │   │   │   ├── IsPrime.csproj
+│   │   │   │   └── Program.qs
+│   │   │   ├── ResultAsBool/
+│   │   │   │   ├── Program.qs
+│   │   │   │   └── ResultAsBool.csproj
+│   │   │   ├── 01-types-and-variables.md
+│   │   │   ├── 02-operations-and-functions.md
+│   │   │   ├── 03-control-flow.md
+│   │   │   ├── 04-arrays-and-tuples.md
+│   │   │   ├── 05-user-defined-types.md
+│   │   │   ├── 06-functors.md
+│   │   │   └── README.md
+│   │   ├── 03-quantum-fundamentals/
+│   │   │   ├── 01-qubit-math.md
+│   │   │   ├── 02-single-qubit-gates.md
+│   │   │   ├── 03-multi-qubit-systems.md
+│   │   │   ├── 04-two-qubit-gates.md
+│   │   │   └── README.md
+│   │   ├── 04-intermediate/
+│   │   │   ├── 02-quantum-teleportation.md
+│   │   │   ├── 04-quantum-oracles.md
+│   │   │   └── README.md
+│   │   ├── 05-advanced/
+│   │   │   ├── 01-error-correction-basics.md
+│   │   │   ├── 05-resource-estimation.md
+│   │   │   └── README.md
+│   │   ├── 06-algorithms/
+│   │   │   ├── 01-grovers-algorithm.md
+│   │   │   ├── 03-shors-algorithm.md
+│   │   │   ├── 04-vqe.md
+│   │   │   └── README.md
+│   │   ├── 07-projects/
+│   │   │   ├── 01-quantum-random-number.md
+│   │   │   ├── 02-quantum-key-distribution.md
+│   │   │   └── README.md
+│   │   ├── advanced/
+│   │   │   ├── entanglement.md
+│   │   │   ├── error collection.md
+│   │   │   ├── quabtum algo.md
+│   │   │   ├── quantum-algorithms.md
+│   │   │   ├── quantum-applications.md
+│   │   │   ├── quantum-communication.md
+│   │   │   ├── quantum-hardware.md
+│   │   │   ├── simulation.md
+│   │   │   └── superposition
+│   │   ├── basics/
+│   │   │   ├── algorithms.md
+│   │   │   ├── debugging.md
+│   │   │   ├── operations.md
+│   │   │   ├── quantum-concepts.md
+│   │   │   └── variables.md
+│   │   ├── functions/
+│   │   │   ├── adjoint.md
+│   │   │   ├── controlled oprations.md
+│   │   │   ├── operations.md
+│   │   │   ├── parameters.md
+│   │   │   └── return values.md
+│   │   ├── important/
+│   │   │   ├── intro.md
+│   │   │   ├── measurment.md
+│   │   │   ├── operations.md
+│   │   │   ├── quantum gates.md
+│   │   │   └── qubits.md
+│   │   └── intermediate/
+│   │       ├── advanced-quantum.md
+│   │       ├── machine-learning.md
+│   │       ├── optimization.md
+│   │       └── quantum-simulation.md
+│   ├── resources/
+│   │   ├── cheat-sheet.md
+│   │   └── further-reading.md
+│   ├── .gitignore
+│   ├── Q#.sln
+│   └── README.md
+├── Ruby/
+│   ├── data/
+│   │   ├── advanced/
+│   │   │   ├── advanced-ruby-features.md
+│   │   │   ├── classandobjects.md
+│   │   │   ├── database-programming.md
+│   │   │   ├── exception handling.md
+│   │   │   ├── file handling.md
+│   │   │   ├── inheritance.md
+│   │   │   ├── modules.md
+│   │   │   ├── security-and-authentication.md
+│   │   │   └── web-development.md
+│   │   ├── algorithms/
+│   │   │   ├── 02-sorting-algorithms.md
+│   │   │   ├── 03-searching-algorithms.md
+│   │   │   ├── 04-graph-algorithms.md
+│   │   │   ├── 05-dynamic-programming.md
+│   │   │   └── algorithms_and_data_structures.md
+│   │   ├── artificial_intelligence/
+│   │   │   ├── 02-machine-learning-basics.md
+│   │   │   ├── 03-neural-networks.md
+│   │   │   ├── 04-deep-learning.md
+│   │   │   ├── 05-natural-language-processing.md
+│   │   │   └── advanced_ai_in_ruby.md
+│   │   ├── basics/
+│   │   │   ├── arrays.md
+│   │   │   ├── conditionals.md
+│   │   │   ├── control flow.md
+│   │   │   ├── data types.md
+│   │   │   ├── introduction.md
+│   │   │   ├── loops.md
+│   │   │   ├── methods.md
+│   │   │   ├── operators.md
+│   │   │   └── variables.md
+│   │   ├── best_practices/
+│   │   │   ├── 01-code-quality.md
+│   │   │   ├── 02-testing-strategies.md
+│   │   │   ├── 03-security-practices.md
+│   │   │   ├── 04-performance-practices.md
+│   │   │   ├── 05-maintainability.md
+│   │   │   └── ruby_best_practices.md
+│   │   ├── blockchain/
+│   │   │   ├── 02-cryptography-basics.md
+│   │   │   ├── 03-consensus-mechanisms.md
+│   │   │   ├── 04-smart-contracts.md
+│   │   │   ├── 05-dapps-development.md
+│   │   │   ├── blockchain_development_in_ruby.md
+│   │   │   ├── demo.rb
+│   │   │   └── guide.md
+│   │   ├── concurrency/
+│   │   │   ├── 01-thread-synchronization.md
+│   │   │   ├── 02-parallel-processing.md
+│   │   │   ├── 03-async-programming.md
+│   │   │   ├── 04-concurrent-data-structures.md
+│   │   │   ├── 05-performance-optimization.md
+│   │   │   └── concurrency_and_parallelism.md
+│   │   ├── cybersecurity/
+│   │   │   ├── 02-encryption-security.md
+│   │   │   ├── 03-network-security.md
+│   │   │   ├── 04-web-security.md
+│   │   │   ├── 05-security-testing.md
+│   │   │   └── advanced_cybersecurity_in_ruby.md
+│   │   ├── database/
+│   │   │   ├── 02-active-record-pattern.md
+│   │   │   ├── 03-database-connections.md
+│   │   │   ├── 04-query-optimization.md
+│   │   │   ├── 05-database-migrations.md
+│   │   │   └── database_programming.md
+│   │   ├── debugging/
+│   │   │   ├── 01-debugging-fundamentals.md
+│   │   │   ├── 02-advanced-debugging.md
+│   │   │   ├── 03-error-handling.md
+│   │   │   ├── 04-logging-strategies.md
+│   │   │   ├── 05-debugging-tools.md
+│   │   │   └── advanced_debugging_techniques.md
+│   │   ├── design-patterns/
+│   │   │   ├── 01-creational-patterns.md
+│   │   │   ├── 02-structural-patterns.md
+│   │   │   ├── 03-behavioral-patterns.md
+│   │   │   ├── 04-patterns-in-ruby.md
+│   │   │   └── 05-pattern-anti-patterns.md
+│   │   ├── devops/
+│   │   │   ├── 02-continuous-integration.md
+│   │   │   ├── 03-infrastructure-as-code.md
+│   │   │   ├── 04-containerization.md
+│   │   │   ├── 05-monitoring-and-logging.md
+│   │   │   └── devops.md
+│   │   ├── docs/
+│   │   │   ├── 00-roadmap.md
+│   │   │   ├── 01-introduction.md
+│   │   │   ├── 02-basic-syntax.md
+│   │   │   ├── 03-data-types.md
+│   │   │   ├── 04-control-flow.md
+│   │   │   ├── 05-methods.md
+│   │   │   ├── 06-oop.md
+│   │   │   ├── 07-modules.md
+│   │   │   ├── 08-error-handling.md
+│   │   │   ├── 09-file-io.md
+│   │   │   ├── 10-gems.md
+│   │   │   ├── 11-metaprogramming.md
+│   │   │   ├── 12-advanced-features.md
+│   │   │   ├── 13-ruby-ecosystem.md
+│   │   │   ├── 14-performance-optimization.md
+│   │   │   └── 15-ruby-internals.md
+│   │   ├── examples/
+│   │   │   ├── advanced-examples/
+│   │   │   │   ├── 01-active-record-patterns.rb
+│   │   │   │   ├── 01-ci-cd-pipelines.rb
+│   │   │   │   ├── 01-code-quality-practices.rb
+│   │   │   │   ├── 01-debugging-techniques.rb
+│   │   │   │   ├── 01-quantum-computing.rb
+│   │   │   │   ├── 01-rspec-best-practices.rb
+│   │   │   │   ├── 01-sorting-algorithms.rb
+│   │   │   │   ├── 02-blockchain-development.rb
+│   │   │   │   ├── 02-data-structures.rb
+│   │   │   │   ├── 02-database-connections.rb
+│   │   │   │   ├── 02-design-patterns.rb
+│   │   │   │   ├── 02-infrastructure-as-code.rb
+│   │   │   │   ├── 02-test-doubles-and-mocks.rb
+│   │   │   │   ├── 02-troubleshooting-patterns.rb
+│   │   │   │   ├── 03-ai-machine-learning.rb
+│   │   │   │   ├── 04-cybersecurity.rb
+│   │   │   │   ├── 05-performance-profiling.rb
+│   │   │   │   ├── algorithms_examples.rb
+│   │   │   │   ├── best_practices_examples.rb
+│   │   │   │   ├── concurrency_examples.rb
+│   │   │   │   ├── database_examples.rb
+│   │   │   │   ├── debugging_examples.rb
+│   │   │   │   ├── design_patterns_examples.rb
+│   │   │   │   ├── devops_examples.rb
+│   │   │   │   ├── integration_examples.rb
+│   │   │   │   ├── machine_learning_examples.rb
+│   │   │   │   ├── metaprogramming_examples.rb
+│   │   │   │   ├── microservices_examples.rb
+│   │   │   │   ├── networking_examples.rb
+│   │   │   │   ├── performance_examples.rb
+│   │   │   │   ├── security_examples.rb
+│   │   │   │   ├── testing_examples.rb
+│   │   │   │   └── web_development_examples.rb
+│   │   │   ├── basic-examples/
+│   │   │   │   ├── 11-metaprogramming_examples.rb
+│   │   │   │   ├── 12-advanced-features_examples.rb
+│   │   │   │   ├── control_flow.rb
+│   │   │   │   ├── data_types.rb
+│   │   │   │   ├── hello_world.rb
+│   │   │   │   └── methods.rb
+│   │   │   ├── challenges/
+│   │   │   │   ├── 02-algorithm-challenges.md
+│   │   │   │   ├── 03-data-structure-challenges.md
+│   │   │   │   ├── 04-puzzle-challenges.md
+│   │   │   │   ├── 05-coding-interview-challenges.md
+│   │   │   │   └── ruby_challenges.rb
+│   │   │   ├── creative-projects/
+│   │   │   │   ├── 05-blockchain-creative.rb
+│   │   │   │   ├── ai_game_developer.rb
+│   │   │   │   ├── creative_ruby_showcase.rb
+│   │   │   │   ├── generative_art_system.rb
+│   │   │   │   └── virtual_world_simulator.rb
+│   │   │   ├── intermediate-examples/
+│   │   │   │   ├── 01-web-development-examples.rb
+│   │   │   │   ├── 02-database-examples.rb
+│   │   │   │   ├── 03-api-examples.rb
+│   │   │   │   ├── 04-testing-examples.rb
+│   │   │   │   ├── 05-concurrency-examples.rb
+│   │   │   │   ├── error_handling.rb
+│   │   │   │   ├── file_io.rb
+│   │   │   │   ├── modules_mixins.rb
+│   │   │   │   └── oop_examples.rb
+│   │   │   ├── interview-prep/
+│   │   │   │   ├── 02-technical-questions.md
+│   │   │   │   ├── 03-behavioral-questions.md
+│   │   │   │   ├── 04-system-design-questions.md
+│   │   │   │   ├── 05-resume-and-portfolio.md
+│   │   │   │   └── ruby_interview_questions.rb
+│   │   │   ├── projects/
+│   │   │   │   ├── contact_book/
+│   │   │   │   │   ├── contact_book.rb
+│   │   │   │   │   ├── contact_manager.rb
+│   │   │   │   │   ├── contact.rb
+│   │   │   │   │   ├── main.rb
+│   │   │   │   │   └── README.md
+│   │   │   │   ├── data_analysis/
+│   │   │   │   │   ├── csv_processor.rb
+│   │   │   │   │   ├── data_analyzer.rb
+│   │   │   │   │   ├── main.rb
+│   │   │   │   │   ├── README.md
+│   │   │   │   │   ├── report_generator.rb
+│   │   │   │   │   ├── sample_data.csv
+│   │   │   │   │   ├── statistics.rb
+│   │   │   │   │   └── visualizer.rb
+│   │   │   │   ├── game_engine/
+│   │   │   │   │   ├── components/
+│   │   │   │   │   │   ├── animation.rb
+│   │   │   │   │   │   ├── health.rb
+│   │   │   │   │   │   ├── input.rb
+│   │   │   │   │   │   ├── physics.rb
+│   │   │   │   │   │   ├── position.rb
+│   │   │   │   │   │   ├── render.rb
+│   │   │   │   │   │   └── velocity.rb
+│   │   │   │   │   ├── events/
+│   │   │   │   │   │   ├── 03-physics-events.rb
+│   │   │   │   │   │   ├── 04-input-events.rb
+│   │   │   │   │   │   ├── event_manager.rb
+│   │   │   │   │   │   └── events.rb
+│   │   │   │   │   ├── systems/
+│   │   │   │   │   │   ├── audio_system.rb
+│   │   │   │   │   │   ├── input_system.rb
+│   │   │   │   │   │   ├── movement_system.rb
+│   │   │   │   │   │   ├── physics_system.rb
+│   │   │   │   │   │   └── render_system.rb
+│   │   │   │   │   ├── entity_manager.rb
+│   │   │   │   │   ├── game_engine.rb
+│   │   │   │   │   ├── game_loop.rb
+│   │   │   │   │   ├── main.rb
+│   │   │   │   │   └── README.md
+│   │   │   │   ├── simple_web_server/
+│   │   │   │   │   ├── public/
+│   │   │   │   │   │   ├── 02-styles.css
+│   │   │   │   │   │   ├── 03-script.js
+│   │   │   │   │   │   └── style.css
+│   │   │   │   │   ├── main.rb
+│   │   │   │   │   ├── README.md
+│   │   │   │   │   ├── request.rb
+│   │   │   │   │   ├── response.rb
+│   │   │   │   │   ├── router.rb
+│   │   │   │   │   └── server.rb
+│   │   │   │   ├── todo_list_manager/
+│   │   │   │   │   ├── main.rb
+│   │   │   │   │   ├── README.md
+│   │   │   │   │   ├── todo_list.rb
+│   │   │   │   │   ├── todo_manager.rb
+│   │   │   │   │   └── todo.rb
+│   │   │   │   ├── 02-project-management.md
+│   │   │   │   ├── 03-best-practices.md
+│   │   │   │   └── README.md
+│   │   │   ├── workshops/
+│   │   │   │   ├── 02-ruby-basics-workshop.md
+│   │   │   │   ├── 03-rails-intro-workshop.md
+│   │   │   │   └── intro_workshop.rb
+│   │   │   └── README.md
+│   │   ├── functions/
+│   │   │   ├── blocks.md
+│   │   │   ├── methods.md
+│   │   │   ├── parameters.md
+│   │   │   ├── recursion.md
+│   │   │   └── return values.md
+│   │   ├── integration/
+│   │   │   ├── 02-api-integration.md
+│   │   │   ├── 03-webhook-integration.md
+│   │   │   ├── 04-message-queues.md
+│   │   │   ├── 05-service-mesh.md
+│   │   │   └── integration_patterns.md
+│   │   ├── intermediate/
+│   │   │   ├── gems-and-packages.md
+│   │   │   ├── metaprogramming.md
+│   │   │   ├── oop-concepts.md
+│   │   │   └── testing.md
+│   │   ├── machine_learning/
+│   │   │   ├── 01-machine-learning-fundamentals.md
+│   │   │   ├── 02-deep-learning-frameworks.md
+│   │   │   ├── 03-reinforcement-learning.md
+│   │   │   ├── 04-natural-language-processing.md
+│   │   │   └── machine_learning.md
+│   │   ├── microservices/
+│   │   │   ├── 01-microservices-basics.md
+│   │   │   ├── 02-service-communication.md
+│   │   │   ├── 03-data-management.md
+│   │   │   ├── 04-service-discovery.md
+│   │   │   ├── 05-monitoring-logging.md
+│   │   │   └── microservices_architecture.md
+│   │   ├── networking/
+│   │   │   ├── 02-socket-programming.md
+│   │   │   ├── 03-network-protocols.md
+│   │   │   ├── 04-network-security.md
+│   │   │   ├── networking_advanced.md
+│   │   │   └── networking.md
+│   │   ├── performance/
+│   │   │   ├── 01-profiling-techniques.md
+│   │   │   ├── 02-memory-optimization.md
+│   │   │   ├── 03-concurrency-optimization.md
+│   │   │   ├── 04-algorithm-optimization.md
+│   │   │   ├── 05-benchmarking-testing.md
+│   │   │   └── performance_optimization.md
+│   │   ├── quantum_computing/
+│   │   │   ├── 02-quantum-algorithms.md
+│   │   │   ├── 03-quantum-circuits.md
+│   │   │   ├── 04-quantum-simulation.md
+│   │   │   ├── 05-quantum-applications.md
+│   │   │   └── quantum_computing_in_ruby.md
+│   │   ├── research/
+│   │   │   ├── 02-research-methodology.md
+│   │   │   ├── 03-data-analysis.md
+│   │   │   ├── 04-scientific-computing.md
+│   │   │   ├── 05-academic-publishing.md
+│   │   │   └── README.md
+│   │   ├── RubyGems/
+│   │   │   └── publishing_guide.md
+│   │   ├── scripts/
+│   │   │   ├── 02-setup-script.rb
+│   │   │   ├── 03-documentation-generator.rb
+│   │   │   └── setup.rb
+│   │   ├── testing/
+│   │   │   ├── 02-unit-testing.md
+│   │   │   ├── 03-integration-testing.md
+│   │   │   ├── 04-performance-testing.md
+│   │   │   ├── 05-continuous-integration.md
+│   │   │   └── advanced_testing_strategies.md
+│   │   ├── tools/
+│   │   │   ├── 02-code-quality-checker.rb
+│   │   │   ├── 03-performance-profiler.rb
+│   │   │   └── code_analyzer.rb
+│   │   └── README.md
+│   ├── .gitignore
+│   ├── CHANGELOG.md
+│   ├── CODE_OF_CONDUCT.md
+│   ├── CONCLUSION.md
+│   ├── CONTRIBUTING.md
+│   ├── FAQ.md
+│   └── LICENSE
+├── Rust/
+│   ├── data/
+│   │   ├── advanced/
+│   │   │   ├── borrowing.md
+│   │   │   ├── concurrency.md
+│   │   │   ├── enums.md
+│   │   │   ├── error handling.md
+│   │   │   ├── functions.md
+│   │   │   ├── macros.md
+│   │   │   ├── ownership.md
+│   │   │   ├── parameters.md
+│   │   │   ├── return values.md
+│   │   │   ├── structs.md
+│   │   │   ├── traits.md
+│   │   │   ├── unsafe-rust.md
+│   │   │   └── vectors.md
+│   │   ├── advanced topics/
+│   │   │   ├── Advanced Topics.md
+│   │   │   ├── Advanced Topics.rs
+│   │   │   ├── Error Handling.md
+│   │   │   ├── Error Handling.rs
+│   │   │   ├── Lifetimes.md
+│   │   │   └── Lifetimes.rs
+│   │   ├── algorithms/
+│   │   │   ├── Algorithms.md
+│   │   │   └── Algorithms.rs
+│   │   ├── async await/
+│   │   │   ├── Async Await.md
+│   │   │   ├── Async Await.rs
+│   │   │   ├── Async Programming.md
+│   │   │   └── Async Programming.rs
+│   │   ├── basics/
+│   │   │   ├── arrays.md
+│   │   │   ├── control flow.md
+│   │   │   ├── control-flow.md
+│   │   │   ├── datatypes.md
+│   │   │   ├── functions.md
+│   │   │   ├── intro.md
+│   │   │   ├── operators.md
+│   │   │   ├── structs.md
+│   │   │   └── variables.md
+│   │   ├── closures and iterators/
+│   │   │   ├── Closures and Iterators.md
+│   │   │   └── Closures and Iterators.rs
+│   │   ├── collections/
+│   │   │   ├── Collections.md
+│   │   │   ├── Collections.rs
+│   │   │   ├── Vectors and HashMaps.md
+│   │   │   └── Vectors and HashMaps.rs
+│   │   ├── concurrency/
+│   │   │   ├── Concurrency.md
+│   │   │   └── Concurrency.rs
+│   │   ├── data science/
+│   │   │   ├── Linear Regression.md
+│   │   │   └── Linear Regression.rs
+│   │   ├── error handling/
+│   │   │   ├── Error Handling.md
+│   │   │   └── Error Handling.rs
+│   │   ├── explainRUST/
+│   │   │   ├── 01_overview_and_core_concepts.md
+│   │   │   ├── 02_ownership_borrowing_lifetimes.md
+│   │   │   ├── 03_types_patterns_and_error_handling.md
+│   │   │   ├── 04_traits_generics_and_concurrency.md
+│   │   │   └── 05_cargo_ecosystem_and_performance.md
+│   │   ├── file io/
+│   │   │   ├── File IO.md
+│   │   │   └── File IO.rs
+│   │   ├── fundamentals/
+│   │   │   ├── Fundamentals.md
+│   │   │   ├── Fundamentals.rs
+│   │   │   ├── Variables and Mutability.md
+│   │   │   └── Variables and Mutability.rs
+│   │   ├── getting started/
+│   │   │   ├── Getting Started.md
+│   │   │   ├── Getting Started.rs
+│   │   │   ├── Hello_World.rs
+│   │   │   ├── Introduction.md
+│   │   │   └── Rust Basics.md
+│   │   ├── intermediate/
+│   │   │   ├── error-handling.md
+│   │   │   ├── ownership.md
+│   │   │   └── traits.md
+│   │   ├── ownership/
+│   │   │   ├── Ownership.md
+│   │   │   └── Ownership.rs
+│   │   ├── projects/
+│   │   │   ├── Bank System/
+│   │   │   │   └── main.rs
+│   │   │   ├── CLI Task Manager/
+│   │   │   │   ├── main.rs
+│   │   │   │   └── README.md
+│   │   │   ├── File Organizer/
+│   │   │   │   └── main.rs
+│   │   │   ├── Inventory System/
+│   │   │   │   └── main.rs
+│   │   │   ├── Mini HTTP Server/
+│   │   │   │   └── main.rs
+│   │   │   ├── Web Server Framework/
+│   │   │   │   ├── src/
+│   │   │   │   │   └── lib.rs
+│   │   │   │   └── README.md
+│   │   │   └── README.md
+│   │   ├── structs and enums/
+│   │   │   ├── Enums and Pattern Matching.md
+│   │   │   ├── Enums and Pattern Matching.rs
+│   │   │   ├── Structs and Enums.md
+│   │   │   ├── Structs and Enums.rs
+│   │   │   ├── Structs and Methods.md
+│   │   │   └── Structs and Methods.rs
+│   │   ├── testing/
+│   │   │   ├── Testing.md
+│   │   │   └── Testing.rs
+│   │   └── traits and generics/
+│   │       ├── Traits and Generics Basics.md
+│   │       ├── Traits and Generics Basics.rs
+│   │       ├── Traits and Generics.md
+│   │       └── Traits and Generics.rs
+│   ├── .gitmodules
+│   ├── INDEX.md
+│   └── README.md
+└── SQL/
+    ├── data/
+    │   ├── advanced/
+    │   │   ├── enums.md
+    │   │   ├── error handling.md
+    │   │   ├── performance.md
+    │   │   ├── stored-procedures.md
+    │   │   ├── structs.md
+    │   │   ├── traits.md
+    │   │   ├── triggers.md
+    │   │   ├── vectors.md
+    │   │   └── views.md
+    │   ├── basics/
+    │   │   ├── control flow.md
+    │   │   ├── datatype.md
+    │   │   ├── delete.md
+    │   │   ├── insert.md
+    │   │   ├── intro.md
+    │   │   ├── introduction.md
+    │   │   ├── joins.md
+    │   │   ├── operators.md
+    │   │   ├── select.md
+    │   │   └── update.md
+    │   ├── functions/
+    │   │   ├── borrowing.md
+    │   │   ├── function.md
+    │   │   ├── ownership.md
+    │   │   ├── parameter.md
+    │   │   └── return values.md
+    │   └── intermediate/
+    │       ├── functions.md
+    │       ├── indexes.md
+    │       ├── security.md
+    │       ├── subqueries.md
+    │       └── transactions.md
+    ├── Practise Problems/
+    │   ├── Notes/
+    │   │   ├── MySQL Handbook.pdf
+    │   │   ├── SQL (notes).pdf
+    │   │   ├── SQL Notes by Apna College.pdf
+    │   │   └── sql_practice_problems.pdf
+    │   ├── Admin Panel.sql
+    │   ├── Auto Increment.sql
+    │   ├── Creating Droping Database.sql
+    │   ├── Creating Tables.sql
+    │   ├── Data.sql
+    │   ├── Foreign Keys.sql
+    │   ├── IF NOT EXISTS.sql
+    │   ├── Insert Values.sql
+    │   ├── Primary Keys.sql
+    │   ├── SHOW Commands.sql
+    │   └── User log.sql
+    ├── SQL-Tutorials/
+    ├── .gitmodules
+    └── README.md
