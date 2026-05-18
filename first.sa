@@ -1,1 +1,20 @@
-print("hello")
+void even(int n)
+{ 
+if n%2==0:{
+    print("even")
+    cout<<n
+}
+else:
+{
+    print("odd")
+    printf(n)
+}
+}
+
+void main()
+{
+    n=input("enter number: ")
+    even(n)
+}
+
+main()
