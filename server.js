@@ -108,8 +108,7 @@ const isAllowedOrigin = (origin) => {
   }
 
   return (
-    allowedOrigins.has(normalizedOrigin) ||
-    /\.vercel\.app$/.test(hostname)
+    allowedOrigins.has(normalizedOrigin) || /\.vercel\.app$/.test(hostname)
   );
 };
 
@@ -118,12 +117,22 @@ const corsOptions = {
     // Allow same-origin/server-to-server requests where browsers omit Origin.
     if (!origin) return callback(null, true);
 
-    if (isAllowedOrigin(origin)) {
+    const normalizedOrigin = origin.replace(/\/$/, "");
+    if (allowedOrigins.has(normalizedOrigin)) {
       return callback(null, true);
     }
 
-    console.warn(`⚠️  CORS origin not in allowlist, allowing request: ${origin}`);
-    return callback(null, true);
+    try {
+      const hostname = new URL(normalizedOrigin).hostname;
+      if (/\.vercel\.app$/.test(hostname)) {
+        return callback(null, true);
+      }
+    } catch (error) {
+      console.warn(`⚠️  Failed to parse CORS origin: ${origin}`);
+    }
+
+    console.warn(`⚠️  CORS origin not in allowlist: ${origin}`);
+    return callback(new Error(`CORS policy blocked origin: ${origin}`));
   },
   credentials: true,
   methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
@@ -136,6 +145,26 @@ app.use((req, res, next) => {
   res.setHeader("X-Frame-Options", "DENY");
   res.setHeader("Referrer-Policy", "no-referrer");
   res.setHeader("Cross-Origin-Opener-Policy", "same-origin");
+  next();
+});
+
+app.use((req, res, next) => {
+  const origin = req.headers.origin;
+  if (origin && allowedOrigins.has(origin.replace(/\/$/, ""))) {
+    res.setHeader("Access-Control-Allow-Origin", origin);
+  }
+  res.setHeader(
+    "Access-Control-Allow-Methods",
+    "GET,POST,PUT,DELETE,PATCH,OPTIONS",
+  );
+  res.setHeader(
+    "Access-Control-Allow-Headers",
+    "Content-Type,Authorization,X-Requested-With",
+  );
+  res.setHeader("Access-Control-Allow-Credentials", "true");
+  if (req.method === "OPTIONS") {
+    return res.sendStatus(204);
+  }
   next();
 });
 
