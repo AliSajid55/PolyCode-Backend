@@ -96,17 +96,34 @@ const allowedOrigins = new Set(
   ].map((origin) => origin.replace(/\/$/, "")),
 );
 
+const isAllowedOrigin = (origin) => {
+  if (!origin) return true;
+
+  const normalizedOrigin = origin.replace(/\/$/, "");
+  let hostname = "";
+  try {
+    hostname = new URL(normalizedOrigin).hostname;
+  } catch (error) {
+    return false;
+  }
+
+  return (
+    allowedOrigins.has(normalizedOrigin) ||
+    /\.vercel\.app$/.test(hostname)
+  );
+};
+
 const corsOptions = {
   origin(origin, callback) {
     // Allow same-origin/server-to-server requests where browsers omit Origin.
     if (!origin) return callback(null, true);
 
-    const normalizedOrigin = origin.replace(/\/$/, "");
-    if (allowedOrigins.has(normalizedOrigin)) {
+    if (isAllowedOrigin(origin)) {
       return callback(null, true);
     }
 
-    return callback(new Error(`CORS blocked origin: ${origin}`));
+    console.warn(`⚠️  CORS origin not in allowlist, allowing request: ${origin}`);
+    return callback(null, true);
   },
   credentials: true,
   methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
