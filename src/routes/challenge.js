@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const Challenge = require('../models/challenge');
-const Submission = require('../models/submission');
+const Challenge = require('../models/Challenge');
+const Submission = require('../models/Submission');
 const User = require('../modules/auth/models/User');
 const { 
     executePythonCode, 

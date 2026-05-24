@@ -78,11 +78,11 @@ if (swaggerJsdoc) {
 const app = express();
 app.disable("x-powered-by");
 
-function normalizeOrigin(origin = "") {
+function normalizeOrigin(origin = "") { // normalizeOrigin is a function that normalizes the origin
   return origin.trim().replace(/\/$/, "");
 }
 
-const defaultAllowedOrigins = [
+const defaultAllowedOrigins = [ // defaultAllowedOrigins is an array of allowed origins
   "https://code.quantumlogicslimited.com",
   "https://www.code.quantumlogicslimited.com",
   "https://digital-logics-studio.vercel.app",
@@ -91,7 +91,7 @@ const defaultAllowedOrigins = [
   "http://127.0.0.1:3000",
 ];
 
-const allowedOrigins = new Set(
+const allowedOrigins = new Set( // Set is a collection of unique values
   [
     ...defaultAllowedOrigins,
     process.env.FRONTEND_URL,
@@ -121,7 +121,7 @@ const isAllowedOrigin = (origin) => {
   );
 };
 
-const corsOptions = {
+const corsOptions = { // corsOptions is an object that contains the options for the cors middleware
   origin(origin, callback) {
     // Server-to-server tools (curl, health checks) omit Origin.
     if (!origin) return callback(null, true);
@@ -242,7 +242,8 @@ app.get("/api/health", (req, res) => {
   });
 });
 
-if (process.env.NODE_ENV === "production") {
+// Serve bundled frontend only when API and UI run on the same host (not on Vercel backend-only).
+if (process.env.NODE_ENV === "production" && !process.env.VERCEL) {
   app.use(express.static(path.join(__dirname, "../PolyCode-Frontend/build")));
   app.get("*", (req, res) => {
     res.sendFile(path.join(__dirname, "../PolyCode-Frontend/build/index.html"));
@@ -251,7 +252,13 @@ if (process.env.NODE_ENV === "production") {
 
 // ─── Start ────────────────────────────────────────────────────────────────────
 const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => {
-  console.log(`🚀  Server:    http://localhost:${PORT}`);
-  console.log(`📖  API Docs:  http://localhost:${PORT}/api-docs`);
-});
+
+// Vercel runs Express as a serverless function — export the app, do not call listen().
+if (process.env.VERCEL) {
+  module.exports = app;
+} else {
+  app.listen(PORT, () => {
+    console.log(`🚀  Server:    http://localhost:${PORT}`);
+    console.log(`📖  API Docs:  http://localhost:${PORT}/api-docs`);
+  });
+}
