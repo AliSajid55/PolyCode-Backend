@@ -2,7 +2,11 @@ require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
 const path = require("path");
-const { connectToMongoDB } = require("./src/config/database");
+const mongoose = require("mongoose");
+const {
+  connectToMongoDB,
+  requireMongoConnection,
+} = require("./src/config/database");
 
 let compression;
 try {
@@ -211,14 +215,14 @@ app.get("/api-docs", (req, res) => {
 });
 
 // ─── API Routes ───────────────────────────────────────────────────────────────
-// Initialize MongoDB connection
+// Warm MongoDB on cold start (serverless); auth routes also await connection.
 connectToMongoDB().catch((err) => {
   console.error("MongoDB initialization error:", err.message);
 });
 
-// Auth Routes (User & Progress)
+// Auth Routes (User & Progress) — require DB before register/login
 const authRoutes = require("./src/modules/auth/auth.router");
-app.use("/api/auth", authRoutes);
+app.use("/api/auth", requireMongoConnection, authRoutes);
 
 const documentRoutes = require("./src/modules/documents/documents.router");
 app.use("/api/documents", documentRoutes);
@@ -234,11 +238,25 @@ app.get("/languages", (req, res) => {
   return res.redirect(307, "/api/documents/languages");
 });
 
-app.get("/api/health", (req, res) => {
+app.get("/api/health", async (req, res) => {
+  let mongo = "not_configured";
+  try {
+    if (!process.env.MONGODB_URI?.trim()) {
+      mongo = "not_configured";
+    } else {
+      await connectToMongoDB();
+      mongo =
+        mongoose.connection.readyState === 1 ? "connected" : "disconnected";
+    }
+  } catch (error) {
+    mongo = "error";
+  }
+
   res.json({
     status: "OK",
     timestamp: new Date().toISOString(),
     message: "Backend is running",
+    mongo,
   });
 });
 

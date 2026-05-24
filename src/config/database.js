@@ -1,40 +1,96 @@
 const mongoose = require("mongoose");
 
+const DEFAULT_DB_NAME = process.env.MONGODB_DB || "polycode";
+
+let cached = global.mongoose;
+if (!cached) {
+  cached = global.mongoose = { conn: null, promise: null };
+}
+
+function normalizeMongoUri(uri = "") {
+  const trimmed = uri.trim();
+  if (!trimmed) return "";
+
+  // If no database name in path (e.g. ...mongodb.net/?appName=), insert default db.
+  if (/\.mongodb\.net\/?\?/.test(trimmed)) {
+    return trimmed.replace(/\.mongodb\.net\/?\?/, `.mongodb.net/${DEFAULT_DB_NAME}?`);
+  }
+  if (/\.mongodb\.net\/?$/.test(trimmed)) {
+    return `${trimmed.replace(/\/$/, "")}/${DEFAULT_DB_NAME}`;
+  }
+
+  return trimmed;
+}
+
 /**
- * Connect to MongoDB
- * @returns {Promise<void>}
+ * Connect to MongoDB (cached for Vercel serverless cold starts).
+ * @returns {Promise<import('mongoose').Mongoose|null>}
  */
 async function connectToMongoDB() {
-  if (!process.env.MONGODB_URI) {
+  const uri = normalizeMongoUri(process.env.MONGODB_URI);
+
+  if (!uri) {
     console.warn(
-      "⚠️  MONGODB_URI not found. Starting without MongoDB; auth, saved progress, and challenge persistence will be unavailable.",
+      "⚠️  MONGODB_URI not found. Auth and saved progress will not work.",
     );
     return null;
   }
 
+  if (cached.conn) {
+    return cached.conn;
+  }
+
+  if (!cached.promise) {
+    cached.promise = mongoose
+      .connect(uri, {
+        serverSelectionTimeoutMS: 20000,
+        socketTimeoutMS: 45000,
+        maxPoolSize: 10,
+      })
+      .then((conn) => {
+        console.log(`✅ MongoDB Connected: ${conn.connection.host}`);
+        return conn;
+      })
+      .catch((error) => {
+        cached.promise = null;
+        console.error("❌ MongoDB Connection Error:", error.message);
+        throw error;
+      });
+  }
+
+  cached.conn = await cached.promise;
+  return cached.conn;
+}
+
+/**
+ * Express middleware — wait for DB before auth/progress routes run.
+ */
+async function requireMongoConnection(req, res, next) {
   try {
-    const conn = await mongoose.connect(process.env.MONGODB_URI, {
-      serverSelectionTimeoutMS: 10000, // 10 s timeout
-      socketTimeoutMS: 45000,
-    });
-    console.log(`✅ MongoDB Connected: ${conn.connection.host}`);
-    return conn;
+    const conn = await connectToMongoDB();
+    if (!conn) {
+      return res.status(503).json({
+        error:
+          "Database is not configured. Set MONGODB_URI on the server (Vercel → Environment Variables).",
+      });
+    }
+    return next();
   } catch (error) {
-    console.error("❌ MongoDB Connection Error:", error.message);
-    console.error(
-      "   Tip: Make sure your .env file is saved as UTF-8 (not UTF-16/Unicode).",
-      "\n   In VS Code: bottom-right corner → click 'UTF-16 LE' → 'Save with Encoding' → UTF-8",
-    );
-    return null;
+    console.error("MongoDB middleware error:", error.message);
+    return res.status(503).json({
+      error:
+        "Cannot reach MongoDB. In Atlas: Network Access → allow 0.0.0.0/0, then verify MONGODB_URI.",
+    });
   }
 }
 
 /**
  * Disconnect from MongoDB
- * @returns {Promise<void>}
  */
 async function disconnectFromMongoDB() {
   try {
+    cached.conn = null;
+    cached.promise = null;
     await mongoose.disconnect();
     console.log("✅ MongoDB Disconnected");
   } catch (error) {
@@ -44,5 +100,6 @@ async function disconnectFromMongoDB() {
 
 module.exports = {
   connectToMongoDB,
+  requireMongoConnection,
   disconnectFromMongoDB,
 };
