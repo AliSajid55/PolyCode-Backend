@@ -233,6 +233,9 @@ app.use("/api/playground", playgroundRoutes);
 const challengeRoutes = require("./src/routes/challenge");
 app.use("/api/challenges", challengeRoutes);
 
+const chatRoutes = require("./src/modules/chat/chat.router");
+app.use("/api/chat", requireMongoConnection, chatRoutes);
+
 // Backward compatibility for older frontend builds requesting /languages directly
 app.get("/languages", (req, res) => {
   return res.redirect(307, "/api/documents/languages");
