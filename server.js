@@ -120,9 +120,18 @@ const isAllowedOrigin = (origin) => {
     return false;
   }
 
-  return (
-    allowedOrigins.has(normalizedOrigin) || /\.vercel\.app$/.test(hostname)
-  );
+  if (allowedOrigins.has(normalizedOrigin) || /\.vercel\.app$/.test(hostname)) {
+    return true;
+  }
+
+  // Local dev from LAN IP (e.g. http://192.168.x.x:3000)
+  if (process.env.NODE_ENV !== "production") {
+    return /^(localhost|127\.0\.0\.1|192\.168\.|10\.|172\.(1[6-9]|2\d|3[01])\.)/.test(
+      hostname,
+    );
+  }
+
+  return false;
 };
 
 const corsOptions = { // corsOptions is an object that contains the options for the cors middleware
@@ -217,6 +226,13 @@ app.get("/api-docs", (req, res) => {
 // ─── API Routes ───────────────────────────────────────────────────────────────
 // Warm MongoDB on cold start (serverless); auth routes also await connection.
 connectToMongoDB().catch((err) => {
+  if (/bad auth|authentication failed/i.test(err.message)) {
+    console.error("MongoDB initialization error:", err.message);
+    console.error(
+      "   → Run: npm run db:setup   (reset password in Atlas → Database Access first)",
+    );
+    return;
+  }
   console.error("MongoDB initialization error:", err.message);
 });
 

@@ -6,7 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
-    "dev": "nodemon server.js"
+    "dev": "nodemon server.js",
+    "db:setup": "node scripts/mongodb-setup.js",
+    "db:test": "node scripts/test-mongodb-connection.js"
   },
   "keywords": [],
   "author": "",
