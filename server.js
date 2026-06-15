@@ -82,11 +82,13 @@ if (swaggerJsdoc) {
 const app = express();
 app.disable("x-powered-by");
 
-function normalizeOrigin(origin = "") { // normalizeOrigin is a function that normalizes the origin
+function normalizeOrigin(origin = "") {
+  // normalizeOrigin is a function that normalizes the origin
   return origin.trim().replace(/\/$/, "");
 }
 
 const defaultAllowedOrigins = [
+  // defaultAllowedOrigins is an array of allowed origins
   "https://code.quantumlogicslimited.com",
   "https://www.code.quantumlogicslimited.com",
   "https://quantumlogicslimited.com",
@@ -207,6 +209,8 @@ app.use(cors(corsOptions));
 app.options(/.*/, cors(corsOptions));
 
 app.use(express.json({ limit: "2mb" }));
+app.use("/certificates", express.static("uploads/certificates"));
+
 app.use(express.urlencoded({ extended: true }));
 
 app.use((req, res, next) => {
@@ -281,6 +285,9 @@ app.use("/api/challenges", challengeRoutes);
 const chatRoutes = require("./src/modules/chat/chat.router");
 app.use("/api/chat", requireMongoConnection, chatRoutes);
 
+// 👇 add here
+const certificateRoutes = require("./src/routes/Certificates.js");
+app.use("/api/certificates", certificateRoutes);
 // Backward compatibility for older frontend builds requesting /languages directly
 app.get("/languages", (req, res) => {
   return res.redirect(307, "/api/documents/languages");
