@@ -155,11 +155,7 @@ async function getUserByUsername(username) {
       throw new Error("User not found");
     }
 
-    const serializedUser = user.toJSON();
-    if (filteredData.username !== undefined) {
-      await syncPolycoderForEmailSafe(serializedUser);
-    }
-    return serializedUser;
+    return toPublicUser(user);
   } catch (error) {
     throw error;
   }
