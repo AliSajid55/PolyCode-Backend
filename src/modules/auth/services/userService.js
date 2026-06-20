@@ -87,11 +87,7 @@ async function getUserById(userId) {
     if (!user) {
       throw new Error("User not found");
     }
-    const serializedUser = user.toJSON();
-    if (filteredData.username !== undefined) {
-      await syncPolycoderForEmailSafe(serializedUser);
-    }
-    return serializedUser;
+    return user.toJSON();
   } catch (error) {
     throw error;
   }
