@@ -14,7 +14,7 @@ router.post("/register", userController.register);
 router.post("/login", userController.login);
 
 /** GET /api/auth/me  — returns current user from Bearer token */
-router.get("/me", userController.getMe);
+router.get("/me", requireAuth, userController.getMe);
 
 /** GET /api/auth/username/:username */
 router.get("/username/:username", userController.getUserByUsername);
@@ -61,29 +61,39 @@ router.get("/progress/dashboard/:userId", progressController.getDashboardStats);
 
 // ── Learn: OOP C++ Progress Routes ───────────────────────────────────────────
 
-router.get("/learn/oops-cpp/progress", oopsCppProgressController.getProgress);
+router.get(
+  "/learn/oops-cpp/progress",
+  requireAuth,
+  oopsCppProgressController.getProgress,
+);
 router.post(
   "/learn/oops-cpp/progress/last-lesson",
+  requireAuth,
   oopsCppProgressController.setLastLesson,
 );
 router.post(
   "/learn/oops-cpp/progress/complete",
+  requireAuth,
   oopsCppProgressController.completeLesson,
 );
 router.post(
   "/learn/oops-cpp/progress/code",
+  requireAuth,
   oopsCppProgressController.saveCode,
 );
 router.post(
   "/learn/oops-cpp/progress/note",
+  requireAuth,
   oopsCppProgressController.saveNote,
 );
 router.post(
   "/learn/oops-cpp/progress/bookmark",
+  requireAuth,
   oopsCppProgressController.toggleBookmark,
 );
 router.post(
   "/learn/oops-cpp/progress/time",
+  requireAuth,
   oopsCppProgressController.addTime,
 );
 
