@@ -293,48 +293,137 @@ async function executeCppCode(code) {
   await fs.mkdir(RUNTIME_TMP_PATH, { recursive: true });
   const id = crypto.randomBytes(8).toString("hex");
   const sourceFile = path.join(RUNTIME_TMP_PATH, `run_${id}.cpp`);
-  const exeFile = path.join(RUNTIME_TMP_PATH, `run_${id}${process.platform === 'win32' ? '.exe' : ''}`);
+  const exeFile = path.join(
+    RUNTIME_TMP_PATH,
+    `run_${id}${process.platform === "win32" ? ".exe" : ""}`,
+  );
+  const compilerMissingMessage =
+    "C++ compiler (g++) is not installed on this server. Install MinGW/g++ or run code from a machine with g++ available.";
 
   await fs.writeFile(sourceFile, code, "utf8");
 
-  return new Promise(async (resolve, reject) => {
-    // 1. Compile
+  return new Promise(async (resolve) => {
+    const cleanupSource = () => fs.unlink(sourceFile).catch(() => {});
+    const cleanupBinary = () => fs.unlink(exeFile).catch(() => {});
+
+    const failCompilerMissing = async () => {
+      await cleanupSource();
+      resolve({
+        stdout: "",
+        stderr: compilerMissingMessage,
+        error: compilerMissingMessage,
+        exitCode: 1,
+      });
+    };
+
+    let compile;
     try {
-      const compile = spawn("g++", ["-o", exeFile, sourceFile], { cwd: RUNTIME_TMP_PATH });
-      let compileErr = "";
-      compile.stderr.on("data", (data) => compileErr += data.toString());
-
-      compile.on("close", async (code) => {
-        if (code !== 0) {
-          await fs.unlink(sourceFile).catch(() => {});
-          return resolve({ stdout: "", stderr: compileErr, error: `Compilation Error:\n${compileErr}`, exitCode: code });
-        }
-
-        // 2. Run
-        const child = spawn(exeFile, [], { cwd: RUNTIME_TMP_PATH });
-        let stdout = "";
-        let stderr = "";
-        const timer = setTimeout(() => child.kill("SIGKILL"), RUN_TIMEOUT_MS);
-
-        child.stdout.on("data", (chunk) => stdout = appendWithCap(stdout, chunk.toString()));
-        child.stderr.on("data", (chunk) => stderr = appendWithCap(stderr, chunk.toString()));
-
-        child.on("close", async (exitCode) => {
-          clearTimeout(timer);
-          await fs.unlink(sourceFile).catch(() => {});
-          await fs.unlink(exeFile).catch(() => {});
-          resolve({
-            stdout: stdout.trimEnd(),
-            stderr: stderr.trimEnd(),
-            error: exitCode === 0 ? null : (stderr.trimEnd() || `C++ exited with code ${exitCode}`),
-            exitCode
-          });
-        });
+      compile = await runSpawn("g++", ["-o", exeFile, sourceFile], {
+        cwd: RUNTIME_TMP_PATH,
+        stdio: ["ignore", "pipe", "pipe"],
       });
     } catch (e) {
-      await fs.unlink(sourceFile).catch(() => {});
-      reject(e);
+      if (e.code === "ENOENT") {
+        await failCompilerMissing();
+        return;
+      }
+      await cleanupSource();
+      resolve({
+        stdout: "",
+        stderr: e.message,
+        error: e.message,
+        exitCode: 1,
+      });
+      return;
     }
+
+    let compileErr = "";
+    compile.stderr.on("data", (data) => {
+      compileErr = appendWithCap(compileErr, data.toString());
+    });
+
+    compile.on("error", async (e) => {
+      if (e.code === "ENOENT") {
+        await failCompilerMissing();
+        return;
+      }
+      await cleanupSource();
+      resolve({
+        stdout: "",
+        stderr: e.message,
+        error: e.message,
+        exitCode: 1,
+      });
+    });
+
+    compile.on("close", async (compileCode) => {
+      if (compileCode !== 0) {
+        await cleanupSource();
+        resolve({
+          stdout: "",
+          stderr: compileErr,
+          error: `Compilation Error:\n${compileErr}`,
+          exitCode: compileCode,
+        });
+        return;
+      }
+
+      let child;
+      try {
+        child = await runSpawn(exeFile, [], {
+          cwd: RUNTIME_TMP_PATH,
+          stdio: ["pipe", "pipe", "pipe"],
+        });
+      } catch (e) {
+        await cleanupSource();
+        await cleanupBinary();
+        resolve({
+          stdout: "",
+          stderr: e.message,
+          error: e.message,
+          exitCode: 1,
+        });
+        return;
+      }
+
+      let stdout = "";
+      let stderr = "";
+      const timer = setTimeout(() => child.kill("SIGKILL"), RUN_TIMEOUT_MS);
+
+      child.stdout.on("data", (chunk) => {
+        stdout = appendWithCap(stdout, chunk.toString());
+      });
+      child.stderr.on("data", (chunk) => {
+        stderr = appendWithCap(stderr, chunk.toString());
+      });
+
+      child.on("error", async (e) => {
+        clearTimeout(timer);
+        await cleanupSource();
+        await cleanupBinary();
+        resolve({
+          stdout: "",
+          stderr: e.message,
+          error: e.message,
+          exitCode: 1,
+        });
+      });
+
+      child.on("close", async (exitCode) => {
+        clearTimeout(timer);
+        await cleanupSource();
+        await cleanupBinary();
+        resolve({
+          stdout: stdout.trimEnd(),
+          stderr: stderr.trimEnd(),
+          error:
+            exitCode === 0
+              ? null
+              : stderr.trimEnd() || `C++ exited with code ${exitCode}`,
+          exitCode,
+        });
+      });
+    });
   });
 }
 
