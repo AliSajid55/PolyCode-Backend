@@ -9,6 +9,71 @@ const {
   MAX_EXEC_OUTPUT_BYTES,
 } = require("../config/constants");
 
+const MATPLOTLIB_PRELUDE = `
+import os
+os.environ.setdefault("MPLBACKEND", "Agg")
+import matplotlib
+matplotlib.use("Agg")
+import io, base64
+
+_POLYCODE_FIGURES = []
+
+def _polycode_setup_matplotlib_show():
+    import matplotlib.pyplot as plt
+    def _capture_show(*args, **kwargs):
+        fig = plt.gcf()
+        if fig.get_axes():
+            buf = io.BytesIO()
+            fig.savefig(buf, format="png", bbox_inches="tight", dpi=110)
+            _POLYCODE_FIGURES.append(base64.b64encode(buf.getvalue()).decode("ascii"))
+        plt.close(fig)
+    plt.show = _capture_show
+
+_polycode_setup_matplotlib_show()
+`;
+
+const MATPLOTLIB_POSTLUDE = `
+import json, sys
+if "_POLYCODE_FIGURES" in globals() and _POLYCODE_FIGURES:
+    sys.stdout.write("\\n__POLYCODE_PLOTS__" + json.dumps(_POLYCODE_FIGURES) + "__\\n")
+`;
+
+function codeUsesMatplotlib(source = "") {
+  return /(?:^|\n)\s*(?:import|from)\s+matplotlib\b/m.test(source) ||
+    /\bmatplotlib\.pyplot\b/.test(source) ||
+    /\bplt\.(?:show|plot|scatter|bar|hist|pie|subplots|figure|savefig|annotate)\s*\(/.test(
+      source,
+    );
+}
+
+function wrapPythonWithMatplotlibCapture(code = "") {
+  if (!codeUsesMatplotlib(code)) {
+    return code;
+  }
+  return `${MATPLOTLIB_PRELUDE}\n${code}\n${MATPLOTLIB_POSTLUDE}`;
+}
+
+/** Skip matplotlib prelude when the server Python has no matplotlib wheel. */
+function wrapPythonForExecution(code = "") {
+  if (!codeUsesMatplotlib(code)) {
+    return code;
+  }
+  return `${MATPLOTLIB_AVAILABILITY_GUARD}\n${wrapPythonWithMatplotlibCapture(code)}`;
+}
+
+const MATPLOTLIB_AVAILABILITY_GUARD = `
+try:
+    import matplotlib  # noqa: F401
+    _POLYCODE_MPL_OK = True
+except ModuleNotFoundError:
+    _POLYCODE_MPL_OK = False
+
+if not _POLYCODE_MPL_OK:
+    import sys
+    sys.stderr.write("Matplotlib is not installed on this server Python.\\n")
+    sys.exit(1)
+`;
+
 let resolvedPythonCommand = null;
 
 function appendWithCap(current, chunk) {
@@ -119,7 +184,7 @@ def __polycode_auto_input(prompt=''):
 builtins.input = __polycode_auto_input
 `;
 
-  const args = [...baseArgs, "-c", `${autoInputPrelude}\n${code}`];
+  const args = [...baseArgs, "-c", `${autoInputPrelude}\n${wrapPythonForExecution(code)}`];
 
   return new Promise(async (resolve, reject) => {
     let child;
