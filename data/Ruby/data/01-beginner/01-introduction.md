@@ -1,202 +1,63 @@
-# Lesson 01 — Introduction to Ruby
+## Lesson 1: Introduction to Ruby
 
-**Module 01 · Beginner · Lesson 01 of 10**
-
-# Introduction to Ruby
-
-## What is Ruby?
-
-Ruby is a dynamic, object-oriented programming language created by Yukihiro "Matz" Matsumoto in 1995. It was designed to be simple, elegant, and enjoyable to use.
-
-## Philosophy
-
-Ruby follows several key principles:
-
-### 1. "Optimized for programmer happiness"
-- Code should be natural to read and write
-- Minimize confusion and surprise
-- Make programming fun!
-
-### 2. "Principle of Least Surprise" (POLS)
-- The language should behave as you expect
-- Consistent behavior across different contexts
-
-### 3. "There's more than one way to do it" (TMTOWTDI)
-- Multiple approaches to solve problems
-- Flexibility in coding style
-
-## Why Learn Ruby?
-
-### Advantages
-- **Simple Syntax**: Easy to read and write
-- **Object-Oriented**: Everything is an object
-- **Dynamic**: Flexible and adaptable
-- **Rich Standard Library**: Built-in functionality
-- **Strong Community**: Active support and resources
-- **Popular Frameworks**: Ruby on Rails, Sinatra
-
-### Common Uses
-- Web development (Ruby on Rails)
-- Scripting and automation
-- Data processing
-- API development
-- DevOps tools
-
-## Ruby vs Other Languages
-
-| Feature | Ruby | Python | JavaScript | Java |
-|---------|------|--------|------------|------|
-| Typing | Dynamic | Dynamic | Dynamic | Static |
-| Paradigm | OO | Multi | Multi | OO |
-| Syntax | Very clean | Clean | Flexible | Verbose |
-| Performance | Moderate | Good | Good | Fast |
-| Web Frameworks | Rails, Sinatra | Django, Flask | Express, React | Spring |
-
-## Your First Ruby Program
-
-Let's create your first Ruby program:
-
-```ruby
-# hello.rb
-puts "Hello, Ruby World!"
-```
-
-### Running Ruby Code
-
-There are several ways to run Ruby code:
-
-#### 1. Interactive Ruby (IRB)
-```bash
-irb
-> puts "Hello, Ruby!"
-Hello, Ruby!
-=> nil
-```
-
-#### 2. Ruby Files
-```bash
-ruby hello.rb
-```
-
-#### 3. One-liners
-```bash
-ruby -e "puts 'Hello, Ruby!'"
-```
-
-## Basic Ruby Concepts
-
-### 1. Everything is an Object
-```ruby
-5.class        # => Integer
-"hello".class  # => String
-[1,2,3].class  # => Array
-```
-
-### 2. Dynamic Typing
-```ruby
-x = 5          # x is an Integer
-x = "hello"    # x is now a String
-x = [1,2,3]    # x is now an Array
-```
-
-### 3. Duck Typing
-"If it walks like a duck and quacks like a duck, it's a duck"
-
-```ruby
-def make_sound(animal)
-  animal.speak
-end
-
-class Dog
-  def speak
-    "Woof!"
-  end
-end
-
-class Cat
-  def speak
-    "Meow!"
-  end
-end
-
-make_sound(Dog.new)  # => "Woof!"
-make_sound(Cat.new)  # => "Meow!"
-```
-
-## Ruby Naming Conventions
-
-| Type | Convention | Example |
-|------|------------|---------|
-| Variables | snake_case | `my_variable` |
-| Classes | PascalCase | `MyClass` |
-| Constants | UPPER_SNAKE_CASE | `MY_CONSTANT` |
-| Methods | snake_case | `my_method` |
-| Files | snake_case.rb | `my_file.rb` |
-
-## Development Environment Setup
-
-### Recommended Tools
-
-#### Text Editors/IDEs
-- **VS Code** with Ruby extension
-- **RubyMine** (JetBrains)
-- **Sublime Text**
-- **Vim/Neovim**
-
-#### Essential Gems
-```bash
-gem install bundler    # Dependency management
-gem install rails      # Web framework
-gem install pry        # Enhanced REPL
-gem install rubocop    # Code linter
-```
-
-### Project Structure
-```
-my_project/
-├── Gemfile           # Dependencies
-├── README.md         # Documentation
-├── lib/              # Source code
-├── spec/             # Tests
-└── bin/              # Executables
-```
-
-## Next Steps
-
-Now that you understand the basics of Ruby, let's move on to:
-
-1. **[Basic Syntax](02-basic-syntax.md)** - Learn Ruby's syntax rules
-2. **[Data Types](03-data-types.md)** - Explore Ruby's data types
-3. **[Control Flow](04-control-flow.md)** - Master control structures
-
-## Practice Exercise
-
-Create a simple Ruby program that:
-1. Prints your name
-2. Calculates the sum of two numbers
-3. Defines a simple class with one method
-
-```ruby
-# exercise.rb
-# Your code here
-```
-
-## Resources
-
-### Official Documentation
-- [Ruby Documentation](https://ruby-doc.org/)
-- [Ruby-Lang.org](https://www.ruby-lang.org/)
-
-### Learning Resources
-- [RubyMonk](https://rubymonk.com/)
-- [Learn Ruby the Hard Way](https://learnrubythehardway.org/)
-- [Ruby Koans](https://github.com/skmetz/ruby_koans)
-
-### Community
-- [Ruby Forum](https://discuss.ruby-lang.org/)
-- [Stack Overflow](https://stackoverflow.com/questions/tagged/ruby)
-- [Reddit r/ruby](https://www.reddit.com/r/ruby/)
+Ruby is a dynamic, open-source, reflective, and completely object-oriented programming language. Designed in the mid-1990s by Yukihiro "Matz" Matsumoto in Japan, Ruby was built with a distinct philosophy: **focus on human-centric design rather than machine-centric efficiency.** In Matz's words, Ruby is designed to make programmers happy. However, don't mistake "developer happiness" for a lack of power; Ruby is an elegant powerhouse that underpins massive scale production systems (like Shopify, GitHub, and Airbnb).
 
 ---
 
-**Ready to dive deeper into Ruby syntax? Let's continue! 🚀**
+## Core Philosophy & Design Principles
+
+To write idiomatic Ruby, you have to understand the mindsets that shaped it:
+
+* **Everything is an Object:** Unlike languages that use primitive data types (like Java or C++), *absolutely everything* in Ruby is an object, including integers, strings, and even nil. Every object can receive messages (methods).
+* **The Principle of Least Surprise (POLS):** Ruby aims to behave in a way that minimizes confusion for an experienced programmer. If you think a method should exist with a certain name, it often does.
+* **Flexibility and Expressiveness:** Ruby is highly dynamic. It allows you to alter its internal structures on the fly. You can redefine built-in methods, add features to standard classes (known as "monkey patching"), and write highly readable code that mirrors natural English sentence structure.
+
+---
+
+## Architectural Deep Dive: How Ruby Works
+
+Ruby is traditionally an **interpreted language**. While early versions relied on a slow abstract syntax tree (AST) interpreter, modern Ruby uses a virtual machine architecture to execute code at production scale.
+
+### 1. The Compilation Pipeline
+
+When you run a Ruby file, the engine executes three primary phases:
+
+1. **Tokenization & Parsing:** The interpreter reads your source code file and converts it into tokens, which are then organized into an Abstract Syntax Tree (AST).
+2. **Bytecode Compilation:** The AST is compiled down into low-level instructions (bytecode).
+3. **Virtual Machine Execution:** The bytecode is executed by the **YARV (Yet Another Ruby VM)**, which has been the official internal execution engine since Ruby 1.9.
+
+### 2. Memory Management & Garbage Collection
+
+Ruby handles memory management automatically, freeing you from manual allocations and deallocations:
+
+* **Mark-and-Sweep:** Ruby's garbage collector identifies all active, reachable objects starting from the root (marking phase) and reclaims the memory slots of unreferenced objects (sweeping phase).
+* **Generational GC:** To optimize performance, Ruby separates objects into "young" and "old" generations. Because most objects die young, the GC scans the young generation frequently and leaves older, long-lived objects alone unless a full collection is triggered.
+
+---
+
+## Ruby Ecosystem & Component Breakdown
+
+When deploying or managing a Ruby environment, you aren't just dealing with a raw compiler. The ecosystem consists of several distinct parts:
+
+| Component | Purpose | Examples / Notes |
+| --- | --- | --- |
+| **MRI (CRuby)** | The reference implementation of Ruby written in C. It is the industry standard. | Most gems are compiled specifically for CRuby. |
+| **Alternative Runtimes** | Alternative VMs engineered for specific performance or platform needs. | **JRuby** (runs on the JVM), **TruffleRuby** (built on GraalVM for high performance). |
+| **RubyGems** | The built-in package management system for Ruby libraries. | A "gem" is a self-contained package of Ruby code/features. |
+| **Bundler** | The dependency manager that resolves and locks exact gem versions across environments. | Reads a `Gemfile` and generates a `Gemfile.lock`. |
+| **Version Managers** | Tools used to isolate and switch between multiple Ruby versions on a single machine. | `rbenv`, `rvm`, or `asdf`. |
+
+---
+
+## When to Use Ruby (And When to Avoid It)
+
+### Where Ruby Excels
+
+* **Rapid Application Development:** Thanks to frameworks like Ruby on Rails, you can prototype and scale complex web applications incredibly fast.
+* **Domain-Specific Languages (DSLs):** Ruby’s flexible syntax makes it exceptionally easy to write highly readable configurations and internal tools (e.g., Homebrew, Chef, RSpec).
+* **Automation & Scripting:** It is a powerful upgrade from Bash scripts for parsing logs, processing data files, or automating server tasks.
+
+### Where Ruby Struggles
+
+* **High-Performance Compute & AI:** Ruby is not ideal for heavy, raw mathematical processing, CPU-bound machine learning training, or high-end 3D graphics rendering (where C++ or Python's native wrapper ecosystems dominate).
+* **Low-Level Memory Control:** If you need to manipulate direct hardware pointers, manage bit-level allocations manually, or operate under strict embedded system resource constraints, Ruby's abstraction layer and runtime footprint are too heavy.

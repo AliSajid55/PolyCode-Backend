@@ -1,333 +1,118 @@
-# Lesson 04 — Variables and Types
+## Lesson 4: Variables and Data Types
 
-**Module 01 · Beginner · Lesson 04 of 10**
+In PHP, a variable is essentially a named pointer stored in memory that points to a core internal C structure called a **zval** (Zend Value). Understanding how to manipulate these pointers, force strict type compliance, and inspect memory representation is crucial for writing high-performance backend systems.
 
+---
 
-## Learning objectives
+## 1. Variable Assignment and Memory Mechanics
 
-- Understand **variables and types** in PHP
-- Read and write small examples you can run locally
-- Connect this topic to the next lesson in the course
+PHP offers two ways to assign values to variables: **Assignment by Value** and **Assignment by Reference**.
 
-## Overview
+### Assignment by Value (Default)
 
-Variables and Types is a core topic on the PolyCode **PHP Certificate Course** path. Work through the examples, then try the exercise before moving on.
-
-## Key concepts
-
-1. **Syntax and structure** — how PHP expresses this idea clearly
-2. **Common patterns** — what you will see in real projects
-3. **Mistakes to avoid** — typical beginner errors and fixes
-
-## Example
+When you assign a variable to another, PHP utilizes a memory-saving mechanism called **Copy-on-Write (COW)**. The two variables point to the exact same memory space until one of them is modified.
 
 ```php
-// Variables and Types — practice sketch
-// declare and print sample variables
+$a = "Initial Data";
+$b = $a; // Both $a and $b point to the same internal zval memory container.
+
+$b = "Modified Data"; // COW triggers. New memory is allocated specifically for $b.
+
 ```
 
-## Exercise
+### Assignment by Reference (`&`)
 
-1. Write a short program that uses today's topic.
-2. Change one value and predict the output before running.
-3. Explain the result in your own words (2–3 sentences).
+By prefixing a variable with an ampersand, you force both variables to point to the exact same memory container permanently. Modifying either variable alters the underlying value directly.
 
-## Checkpoint
+```php
+$x = 10;
+$y = &$x; // $y is a reference link to $x
 
-You are ready for the next lesson when you can solve the exercise without copying the example.
+$y = 50; 
+echo $x; // Outputs: 50
+
+```
 
 ---
 
-**Next:** Continue to lesson 05 in this module.
+## 2. Scalar and Compound Types in Action
+
+PHP categorizes types into **Scalar** (single value), **Compound** (collection of values), and **Special** types.
+
+### Type Categories
+
+| Category | Type | Production Description | Example |
+| --- | --- | --- | --- |
+| **Scalar** | `bool` | Represents logical truth states. | `$isLogged = true;` |
+| **Scalar** | `int` | Platform-dependent signed whole numbers. | `$id = 4529;` |
+| **Scalar** | `float` | IEEE 754 precision floating-point numbers. | `$rate = 0.05;` |
+| **Scalar** | `string` | A byte array (not Unicode native; supports up to 2GB). | `$slug = 'php-basics';` |
+| **Compound** | `array` | An ordered map linking keys to values. | `$data = ['id' => 1];` |
+| **Compound** | `object` | An instance of a user-defined class structure. | `$res = new Response();` |
+| **Special** | `resource` | Holds a reference to an external system handler. | `$file = fopen('log.txt', 'r');` |
+| **Special** | `null` | A deliberate marker representing an unassigned state. | `$token = null;` |
 
 ---
 
-## Reference code
+## 3. Strict Type Assertions & Type Hinting
 
-```
+While PHP's dynamic engine seamlessly juggles loose types, production code relies on strict boundaries to eliminate type mutation bugs.
+
+### Type Coercion (Weak Mode - Default)
+
+Without strict types, PHP will silently try to convert mismatched data types to satisfy parameter demands.
+
+```php
 <?php
-/**
- * PHP Variables and Data Types
- * 
- * Understanding variables, data types, and type conversion in PHP.
- */
-
-// Variable Declaration and Assignment
-echo "=== Variable Declaration and Assignment ===\n";
-
-// Different ways to declare variables
-$name = "John Doe";
-$age = 25;
-$height = 5.9;
-$isStudent = true;
-$courses = ["PHP", "JavaScript", "Python"];
-
-echo "Name: $name\n";
-echo "Age: $age\n";
-echo "Height: $height\n";
-echo "Is Student: " . ($isStudent ? 'Yes' : 'No') . "\n";
-echo "Courses: " . implode(", ", $courses) . "\n\n";
-
-// Variable Variables
-echo "=== Variable Variables ===\n";
-
-$variableName = "message";
-$$variableName = "Hello, World!";
-
-echo "Variable name: $variableName\n";
-echo "Message: $message\n\n";
-
-// Data Types
-echo "=== Data Types ===\n";
-
-// String
-$stringVar = "This is a string";
-echo "String: $stringVar (Type: " . gettype($stringVar) . ")\n";
-
-// Integer
-$intVar = 42;
-echo "Integer: $intVar (Type: " . gettype($intVar) . ")\n";
-
-// Float
-$floatVar = 3.14159;
-echo "Float: $floatVar (Type: " . gettype($floatVar) . ")\n";
-
-// Boolean
-$boolVar = true;
-echo "Boolean: " . ($boolVar ? 'true' : 'false') . " (Type: " . gettype($boolVar) . ")\n";
-
-// Array
-$arrayVar = [1, 2, 3, 4, 5];
-echo "Array: [" . implode(", ", $arrayVar) . "] (Type: " . gettype($arrayVar) . ")\n";
-
-// Object
-class Person {
-    public $name = "Jane Doe";
-    public $age = 30;
+function calculateTotal(int $price, int $quantity) {
+    return $price * $quantity;
 }
 
-$objectVar = new Person();
-echo "Object: " . get_class($objectVar) . " (Type: " . gettype($objectVar) . ")\n";
+// PHP silently coerces the string "5" into an integer 5 and runs without error.
+calculateTotal(10, "5"); 
 
-// NULL
-$nullVar = null;
-echo "NULL: " . ($nullVar ?? 'NULL') . " (Type: " . gettype($nullVar) . ")\n\n";
-
-// Type Casting
-echo "=== Type Casting ===\n";
-
-// Implicit Type Conversion
-$number = "10";
-$result = $number + 5;
-echo "String '10' + 5 = $result (Type: " . gettype($result) . ")\n";
-
-// Explicit Type Casting
-$stringValue = "123.45";
-$intValue = (int)$stringValue;
-$floatValue = (float)$stringValue;
-$boolValue = (bool)$stringValue;
-
-echo "Original string: $stringValue\n";
-echo "Integer cast: $intValue\n";
-echo "Float cast: $floatValue\n";
-echo "Boolean cast: " . ($boolValue ? 'true' : 'false') . "\n\n";
-
-// Type Checking Functions
-echo "=== Type Checking Functions ===\n";
-
-$testValue = "Hello World";
-
-echo "Value: $testValue\n";
-echo "is_string(): " . (is_string($testValue) ? 'true' : 'false') . "\n";
-echo "is_int(): " . (is_int($testValue) ? 'true' : 'false') . "\n";
-echo "is_float(): " . (is_float($testValue) ? 'true' : 'false') . "\n";
-echo "is_bool(): " . (is_bool($testValue) ? 'true' : 'false') . "\n";
-echo "is_array(): " . (is_array($testValue) ? 'true' : 'false') . "\n";
-echo "is_object(): " . (is_object($testValue) ? 'true' : 'false') . "\n";
-echo "is_null(): " . (is_null($testValue) ? 'true' : 'false') . "\n\n";
-
-// Constants
-echo "=== Constants ===\n";
-
-// Define constants
-define("SITE_NAME", "My PHP Website");
-define("MAX_USERS", 1000);
-define("PI", 3.14159);
-
-echo "Site Name: " . SITE_NAME . "\n";
-echo "Max Users: " . MAX_USERS . "\n";
-echo "PI: " . PI . "\n\n";
-
-// Magic Constants
-echo "=== Magic Constants ===\n";
-
-echo "__FILE__: " . __FILE__ . "\n";
-echo "__LINE__: " . __LINE__ . "\n";
-echo "__DIR__: " . __DIR__ . "\n";
-echo "__FUNCTION__: " . __FUNCTION__ . "\n";
-echo "__CLASS__: " . __CLASS__ . "\n";
-echo "__METHOD__: " . __METHOD__ . "\n";
-echo "__NAMESPACE__: " . __NAMESPACE__ . "\n\n";
-
-// Variable Scope
-echo "=== Variable Scope ===\n";
-
-$globalVar = "Global variable";
-
-function testScope() {
-    $localVar = "Local variable";
-    global $globalVar;
-    $globalVar = "Modified global variable";
-    
-    echo "Local variable: $localVar\n";
-    echo "Global variable inside function: $globalVar\n";
-}
-
-testScope();
-echo "Global variable outside function: $globalVar\n\n";
-
-// Static Variables
-echo "=== Static Variables ===\n";
-
-function counter() {
-    static $count = 0;
-    $count++;
-    echo "Count: $count\n";
-}
-
-counter(); // Count: 1
-counter(); // Count: 2
-counter(); // Count: 3
-echo "\n";
-
-// Reference Variables
-echo "=== Reference Variables ===\n";
-
-$original = "Original value";
-$reference = &$original;
-
-echo "Original: $original\n";
-echo "Reference: $reference\n";
-
-$reference = "Modified value";
-
-echo "After modification:\n";
-echo "Original: $original\n";
-echo "Reference: $reference\n\n";
-
-// Variable Dumping and Debugging
-echo "=== Variable Dumping and Debugging ===\n";
-
-$debugVar = [
-    'name' => 'John',
-    'age' => 25,
-    'skills' => ['PHP', 'MySQL', 'JavaScript']
-];
-
-echo "print_r():\n";
-print_r($debugVar);
-
-echo "\nvar_dump():\n";
-var_dump($debugVar);
-
-echo "\nvar_export():\n";
-var_export($debugVar);
-
-echo "\n\n";
-
-// Practical Examples
-echo "=== Practical Examples ===\n";
-
-// Example 1: User Profile
-function createUserProfile($name, $age, $email, $isActive = true) {
-    return [
-        'name' => $name,
-        'age' => (int)$age,
-        'email' => $email,
-        'is_active' => (bool)$isActive,
-        'created_at' => date('Y-m-d H:i:s')
-    ];
-}
-
-$user = createUserProfile("Alice Johnson", 28, "alice@example.com");
-echo "User Profile:\n";
-foreach ($user as $key => $value) {
-    echo "  $key: $value\n";
-}
-echo "\n";
-
-// Example 2: Calculator
-function calculate($operation, $num1, $num2) {
-    $num1 = (float)$num1;
-    $num2 = (float)$num2;
-    
-    switch ($operation) {
-        case 'add':
-            return $num1 + $num2;
-        case 'subtract':
-            return $num1 - $num2;
-        case 'multiply':
-            return $num1 * $num2;
-        case 'divide':
-            return $num2 != 0 ? $num1 / $num2 : "Cannot divide by zero";
-        default:
-            return "Invalid operation";
-    }
-}
-
-echo "Calculator Examples:\n";
-echo "10 + 5 = " . calculate('add', 10, 5) . "\n";
-echo "10 - 5 = " . calculate('subtract', 10, 5) . "\n";
-echo "10 * 5 = " . calculate('multiply', 10, 5) . "\n";
-echo "10 / 5 = " . calculate('divide', 10, 5) . "\n\n";
-
-// Example 3: Data Validation
-function validateUserData($data) {
-    $errors = [];
-    
-    // Validate name (required, string)
-    if (!isset($data['name']) || empty($data['name'])) {
-        $errors[] = "Name is required";
-    } elseif (!is_string($data['name'])) {
-        $errors[] = "Name must be a string";
-    }
-    
-    // Validate age (required, integer, positive)
-    if (!isset($data['age']) || $data['age'] === '') {
-        $errors[] = "Age is required";
-    } elseif (!is_numeric($data['age'])) {
-        $errors[] = "Age must be a number";
-    } elseif ((int)$data['age'] <= 0) {
-        $errors[] = "Age must be positive";
-    }
-    
-    // Validate email (required, valid format)
-    if (!isset($data['email']) || empty($data['email'])) {
-        $errors[] = "Email is required";
-    } elseif (!filter_var($data['email'], FILTER_VALIDATE_EMAIL)) {
-        $errors[] = "Invalid email format";
-    }
-    
-    return $errors;
-}
-
-$testData = [
-    'name' => 'Bob Smith',
-    'age' => '35',
-    'email' => 'bob@example.com'
-];
-
-$validationErrors = validateUserData($testData);
-
-if (empty($validationErrors)) {
-    echo "Data validation passed!\n";
-} else {
-    echo "Validation errors:\n";
-    foreach ($validationErrors as $error) {
-        echo "  - $error\n";
-    }
-}
-
-echo "\n=== End of Variables and Data Types ===\n";
-?>
 ```
+
+### Strict Type Enforcement
+
+By adding the `strict_types` directive as the **absolute first statement** in a file, scalar type hinting becomes rigid. The engine stops coercing values and throws a `TypeError` if data types don't match perfectly.
+
+```php
+<?php
+declare(strict_types=1);
+
+function calculateTotal(int $price, int $quantity): int {
+    return $price * $quantity;
+}
+
+// This line now triggers a fatal TypeError because a string was passed instead of an int.
+calculateTotal(10, "5"); 
+
+```
+
+---
+
+## 4. Advanced Type Handling (PHP 8.x+)
+
+Modern PHP allows for expressive, multi-type definitions directly within function signatures using **Union Types** and **Intersection Types**.
+
+### Union Types (`|`)
+
+Enables a property, parameter, or return type to accept multiple distinct types.
+
+```php
+// Explicitly states that the ID can be an integer or a UUID string, or null
+function findUser(int|string|null $id): array|null {
+    // Database lookup logic...
+    return [];
+}
+
+```
+
+### The `mixed` Type
+
+The `mixed` type represents an explicit catch-all type. It is equivalent to a union type of `object|array|string|int|float|bool|null|resource`. Use this sparingly, primarily when migrating legacy un-typed codebases or dealing with polymorphic payload structures.
+
+---
+
+The type system rules are set. Standing by for your next topic signal.

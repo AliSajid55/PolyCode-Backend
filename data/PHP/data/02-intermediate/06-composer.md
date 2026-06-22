@@ -1,41 +1,120 @@
-# Lesson 06 — Composer Package Manager
+## Lesson 6: Composer Package Manager
 
-**Module 02 · Intermediate · Lesson 06 of 06**
-
-
-## Learning objectives
-
-- Understand **composer package manager** in PHP
-- Read and write small examples you can run locally
-- Connect this topic to the next lesson in the course
-
-## Overview
-
-Composer Package Manager is a core topic on the PolyCode **PHP Certificate Course** path. Work through the examples, then try the exercise before moving on.
-
-## Key concepts
-
-1. **Syntax and structure** — how PHP expresses this idea clearly
-2. **Common patterns** — what you will see in real projects
-3. **Mistakes to avoid** — typical beginner errors and fixes
-
-## Example
-
-```php
-// Composer Package Manager — practice sketch
-// add your code here
-```
-
-## Exercise
-
-1. Write a short program that uses today's topic.
-2. Change one value and predict the output before running.
-3. Explain the result in your own words (2–3 sentences).
-
-## Checkpoint
-
-You are ready for the next lesson when you can solve the exercise without copying the example.
+In modern PHP development, you do not manually download `.zip` files of libraries and copy them into your codebase. Instead, production applications rely on **Composer**, the industry-standard dependency manager for PHP. Composer automates library installation, manages version constraints, and handles class autoloading seamlessly.
 
 ---
 
-**Next:** Continue to lesson 07 in this module.
+## 1. What is Composer?
+
+Composer is a tool for dependency management in PHP. It allows you to declare the external libraries your project depends on, and it manages (installs, updates, and tracks) them for you.
+
+### Dependency Management vs. Package Management
+
+Unlike system package managers (like `apt` or `brew`) that install software globally, Composer manages dependencies on a **per-project basis**. It isolates packages inside a specific directory (`vendor/`) within your project root, ensuring that different applications on the same server can run entirely different versions of the same library without conflicts.
+
+---
+
+## 2. The Manifest File Matrix: `composer.json` vs. `composer.lock`
+
+When you initialize Composer in a project, two critical files are generated in your root directory. Understanding the precise relationship between them is vital for reliable production deployments.
+
+### `composer.json` (The Manifesto)
+
+This file lists the immediate packages your project requires, along with acceptable version ranges. You modify this file directly (or via CLI commands) to declare your project's configuration.
+
+### `composer.lock` (The Lockfile)
+
+When you run an installation command, Composer calculates the exact versions of every library (and their sub-dependencies) down to the specific commit hash and writes them here.
+
+### Deployment Rule Matrix
+
+| Criteria | `composer.json` | `composer.lock` |
+| --- | --- | --- |
+| **Content** | Explicit dependencies and semantic version ranges (e.g., `^2.4`). | Exact, pinned versions and specific commit hashes. |
+| **Git Source Control** | **Must be committed.** | **Must be committed.** |
+| **Production Impact** | Tells developers the general scope of what the project needs. | **Guarantees** that every server and developer runs the exact same code down to the byte. |
+| **Primary Command** | `composer update` reads this to calculate and upgrade packages. | `composer install` reads this to lock down the environment. |
+
+> **Production Deployment Rule:** Never run `composer update` on a live production server. Doing so bypasses the lockfile and upgrades packages dynamically, which can introduce breaking changes. Always run `composer update` locally, test the changes, commit the updated `composer.lock` file, and run `composer install` on the production server.
+
+---
+
+## 3. Essential Core Commands
+
+Managing packages is handled cleanly through the terminal using specific execution paths.
+
+### Initializing a Project
+
+```bash
+composer init
+
+```
+
+This interactive wizard guides you through setting up a brand-new `composer.json` file for your application.
+
+### Adding a Package
+
+To pull a library into your project (such as Guzzle for HTTP requests, or Monolog for advanced logging), use the `require` command:
+
+```bash
+composer require monolog/monolog
+
+```
+
+### Installing Pinned Versions (Deployments)
+
+When checking out an existing project from source control, use the `install` command to read the lockfile and provision the environment exactly as it was saved:
+
+```bash
+composer install --no-dev --optimize-autoloader
+
+```
+
+* `--no-dev`: Skips development-only tools (like testing frameworks) to optimize production execution speed and minimize dependency footprint.
+* `--optimize-autoloader`: Converts dynamic class lookups into a highly performant, static class map file for production speed.
+
+---
+
+## 4. Modern Autoloading Standards: PSR-4
+
+Historically, importing external classes required writing long chains of `require_once` statements at the top of every script. Composer completely eliminates this boilerplate by implementing the **PSR-4 Autoloading Standard** (PHP Standard Recommendation).
+
+PSR-4 maps predefined namespace prefixes directly to physical directory pathways in your file system.
+
+### Declaring an Autoload Map (`composer.json`)
+
+You tell Composer how your application namespaces map to your directory structure within the `autoload` block:
+
+```json
+{
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    }
+}
+
+```
+
+* This rule dictates that any class namespace starting with `App\` maps directly to the physical `/src` folder on your disk. For example, the class `App\Services\PaymentGateway` must reside at `/src/Services/PaymentGateway.php`.
+
+### Bootstrapping the Application (`index.php`)
+
+To make your entire dependency matrix and internal application classes available across your codebase, you only need to include **one** file at the absolute entry point of your application:
+
+```php
+<?php
+declare(strict_types=1);
+
+// Pull in the single unified autoloader file generated by Composer
+require_once __DIR__ . '/vendor/autoload.php';
+
+// Instantiate external libraries or internal namespaced classes directly
+use Monolog\Logger;
+use App\Services\PaymentGateway;
+
+$log = new Logger('app');
+$payment = new PaymentGateway(); 
+// Both objects initialize seamlessly without a single manual require statement.
+
+```
